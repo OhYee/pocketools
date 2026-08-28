@@ -133,10 +133,7 @@ final class _HistoryPageState extends State<HistoryPage> {
       false;
 
   Future<void> _deleteAll() async {
-    if (!await _confirm(
-      title: '清除全部历史？',
-      message: '此操作只删除 Pocketools 本地历史，无法撤销。',
-    )) {
+    if (!await _confirm(title: '清除全部历史？', message: '此操作只删除万象匣本地历史，无法撤销。')) {
       return;
     }
     await widget.repository.clearHistory();

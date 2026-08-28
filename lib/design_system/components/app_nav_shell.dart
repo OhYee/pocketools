@@ -55,15 +55,15 @@ final class AppNavShell extends StatelessWidget {
                   bottom: AppSpacing.xl,
                 ),
                 child: Tooltip(
-                  message: 'Pocketools',
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: accentSurface,
-                      borderRadius: BorderRadius.circular(AppRadii.medium),
-                    ),
-                    child: SizedBox.square(
-                      dimension: AppSpacing.xxxl,
-                      child: Icon(Icons.auto_awesome, color: accentColor),
+                  message: '万象匣',
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppRadii.medium),
+                    child: Image.asset(
+                      'assets/branding/app_icon.png',
+                      width: AppSpacing.xxxl,
+                      height: AppSpacing.xxxl,
+                      fit: BoxFit.cover,
+                      semanticLabel: '万象匣标志',
                     ),
                   ),
                 ),

@@ -33,7 +33,7 @@ final class _SettingsPageState extends State<SettingsPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('清除全部历史？'),
-        content: const Text('这会删除 Pocketools 拥有的本地会话、收藏和私人备注，无法撤销。'),
+        content: const Text('这会删除万象匣拥有的本地会话、收藏和私人备注，无法撤销。'),
         actions: <Widget>[
           AppButton(
             label: '取消',
@@ -141,7 +141,7 @@ final class _SettingsPageState extends State<SettingsPage> {
                   onChanged: (value) => settings.historyEnabled = value,
                 ),
                 const Text(
-                  'Web 使用站点本地存储。无痕模式、浏览器清理站点数据或系统回收空间都可能移除它；Pocketools 不上传会话。',
+                  'Web 使用站点本地存储。无痕模式、浏览器清理站点数据或系统回收空间都可能移除它；万象匣不上传会话。',
                 ),
                 const SizedBox(height: AppSpacing.lg),
                 AppButton(

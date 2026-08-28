@@ -179,7 +179,7 @@ final class CoinToolModule
       title: descriptor.name,
       summary: summary,
       plainText: <String>[
-        'Pocketools · ${descriptor.name}',
+        '万象匣 · ${descriptor.name}',
         '标签：heads=${config.headsLabel}；tails=${config.tailsLabel}',
         '共抛 ${result.tossCount} 次',
         '计数：${config.headsLabel} ${result.headsCount}（heads）；'

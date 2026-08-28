@@ -130,7 +130,7 @@ final class ToolSessionAdapter {
       title: descriptor.name,
       summary: summary,
       plainText: <String>[
-        'Pocketools · ${descriptor.name}',
+        '万象匣 · ${descriptor.name}',
         summary,
         '规则版本：${session.ruleVersion}',
         '算法版本：${session.algorithmVersion}',

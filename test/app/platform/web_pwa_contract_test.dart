@@ -102,6 +102,9 @@ void main() {
 
     expect(manifest['display'], 'standalone');
     expect(manifest['orientation'], 'any');
+    expect(manifest['name'], '万象匣');
+    expect(manifest['short_name'], '万象匣');
+    expect(manifest['theme_color'], '#071A4A');
   });
 
   test('Web shell declares a device-width viewport for responsive layout', () {
@@ -111,5 +114,7 @@ void main() {
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
       ),
     );
+    expect(index, contains('<title>万象匣</title>'));
+    expect(index, contains('apple-mobile-web-app-title" content="万象匣"'));
   });
 }

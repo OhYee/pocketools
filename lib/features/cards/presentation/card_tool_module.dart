@@ -80,7 +80,7 @@ final class CardToolModule implements ToolModule, ToolSessionAdapterProvider {
       title: descriptor.name,
       summary: summary,
       plainText: <String>[
-        'Pocketools · ${descriptor.name}',
+        '万象匣 · ${descriptor.name}',
         cardDeckSummary(config),
         for (var index = 0; index < result.cards.length; index++)
           '#${index + 1} ${playingCardLabel(result.cards[index])}',

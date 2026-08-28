@@ -171,7 +171,7 @@ final class _PocketoolsAppState extends State<PocketoolsApp> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    title: 'Pocketools',
+    title: '万象匣',
     debugShowCheckedModeBanner: false,
     theme: AppTheme.light(),
     darkTheme: AppTheme.dark(),

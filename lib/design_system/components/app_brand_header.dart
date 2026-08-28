@@ -23,11 +23,14 @@ final class AppBrandHeader extends StatelessWidget {
             ),
           ],
         ),
-        child: SizedBox.square(
-          dimension: AppSpacing.xxxl,
-          child: Icon(
-            Icons.auto_awesome,
-            color: Theme.of(context).colorScheme.onPrimary,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(AppRadii.medium),
+          child: Image.asset(
+            'assets/branding/app_icon.png',
+            width: AppSpacing.xxxl,
+            height: AppSpacing.xxxl,
+            fit: BoxFit.cover,
+            semanticLabel: '万象匣标志',
           ),
         ),
       ),
@@ -36,12 +39,12 @@ final class AppBrandHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Pocketools',
+            '万象匣',
             style: Theme.of(context).textTheme.titleLarge
                 ?.copyWith(fontWeight: FontWeight.w800),
           ),
           Text(
-            'v0.1.1 · 本地随机工具箱',
+            'v0.1.2 · 本地随机工具箱',
             style: Theme.of(context).textTheme.bodySmall
                 ?.copyWith(color: context.appColors.textSecondary),
           ),

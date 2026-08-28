@@ -33,6 +33,8 @@ void main() {
       'encyclopedia',
     ]);
     expect(find.byType(AppToolCard), findsNWidgets(7));
+    expect(find.text('万象匣'), findsOneWidget);
+    expect(find.bySemanticsLabel('万象匣标志'), findsOneWidget);
     for (final name in <String>[
       '塔罗',
       '六爻起卦',

@@ -4,7 +4,7 @@ Pocketools 是一个面向 Android 与 Web/PWA 的离线优先随机工具箱，
 
 ## 项目状态
 
-- **当前版本**：v0.1.1+2。
+- **当前版本**：v0.1.2+3。
 - **当前阶段**：首版本地源码基线之上的真实运行时视觉增量已交付；硬币、六爻、D20、扑克和塔罗均接入可识别实体、统一状态舞台和物理感动画，资源候选许可仍待复核。
 - **验证状态**：当前源码已通过 `make check-format`、`make analyze`、全量回归、Web 生产构建和 Android debug／release／split-per-ABI 构建；release APK 当前沿用 Android Debug 证书，尚未完成商店 release 签名，Android 实体设备、真实传感器/振动、完整浏览器矩阵、hosted CI 和公共渠道仍未验证，详见 [多重占卜设计与实现说明](docs/multi-divination-design.md) 与 [平台验收](docs/test-results-platform.md)。
 - **许可证**：Apache-2.0 适用于项目代码和原创文档；运行时视觉资源按各自清单状态处理，详见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。

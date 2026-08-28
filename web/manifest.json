@@ -1,10 +1,10 @@
 {
-    "name": "Pocketools",
-    "short_name": "Pocketools",
+    "name": "万象匣",
+    "short_name": "万象匣",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#F7F7F5",
-    "theme_color": "#245E73",
+    "theme_color": "#071A4A",
     "description": "离线优先、过程可追溯的随机工具箱。",
     "orientation": "any",
     "prefer_related_applications": false,

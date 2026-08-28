@@ -216,7 +216,7 @@ final class TarotToolModule
     const composer = TarotInterpretationComposer();
     final interpretations = composer.resolveReading(result);
     final lines = <String>[
-      'Pocketools · ${descriptor.name}',
+      '万象匣 · ${descriptor.name}',
       tarotReadingSummary(config),
       for (final interpretation in interpretations)
         '${tarotPositionLabel(interpretation.drawnCard.position)}：'

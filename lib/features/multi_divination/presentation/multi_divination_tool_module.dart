@@ -123,7 +123,7 @@ final class MultiDivinationToolModule
     final config = codec.decodeInput(session.input);
     final reading = codec.decodeOutcome(session.outcome, config);
     final lines = <String>[
-      'Pocketools · ${descriptor.name}',
+      '万象匣 · ${descriptor.name}',
       summary,
       '方式：${multiDivinationModeLabel(config.mode)}',
       for (final group in reading.groups)
