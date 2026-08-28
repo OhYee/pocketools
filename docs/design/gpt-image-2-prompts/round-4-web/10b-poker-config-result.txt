@@ -1,0 +1,15 @@
+Use case: ui-mockup
+Asset type: independent expanded round-4 16:10 desktop poker configuration and result page
+Primary request: Create one complete Pocketools desktop "抽扑克牌" page in a single 16:10 interface composition, showing configuration on the left and the immutable completed result on the right. This is one responsive product page, not a two-page board or casino table.
+
+Source-size honesty: The platform may return different raster dimensions. Do not claim native 1600 x 1000, 4K, or guaranteed source pixels. Keep the complete 16:10 page and all shadows/content inside a generous pure-background safety area so the full source can later be aspect-fit and padded to 1600 x 1000 without losing UI. No out-of-page captions.
+
+Shell: Desktop left navigation exact order "首页", "工具", "历史", "设置", selecting only "工具". Use restrained light neutral surfaces with a small playing-card red/ink accent, system type, practical targets, and visible focus. No bottom navigation, hamburger, account, browser chrome, or marketing UI.
+
+Configuration column: Switch "包含大小王" is off with "默认关闭". Deck summary exactly "标准牌组 · 不含大小王 · 52 张". Accessible stepper "抽取数量" is 3 with range "1～52". Show "无放回，按顺序展示" and primary action "洗牌并抽取". Do not show 54 while off and do not preview random cards in configuration.
+
+Result column: Show exactly #1 黑桃 A, #2 红桃 10, #3 梅花 K with abstract original suit/rank marks and stable sequence. Summary "已抽取 3 张 · 剩余 49 张". Show actions "重新抽取", "调整配置", "复制文本", "分享" and a compact "查看过程" with rule/algorithm versions. Make clear that redraw starts a new session.
+
+Immutable gate: includeJokers=false, deckSize=52, drawCount=3, without replacement, card IDs spades.a / hearts.10 / clubs.k, remainingCount=49. Never add a duplicate, joker, sorted order, hidden fourth card, 53-card deck, or conflicting count.
+
+Prohibit: branded card back, detailed court art, casino table, chip, wager, odds, cash, dealer, win/loss, realistic currency, private data, watermark, trademark, extra navigation, clipped content, or prior-image reference.

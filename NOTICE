@@ -1,0 +1,40 @@
+Pocketools
+Copyright 2026 Pocketools contributors
+
+Pocketools is built with Flutter 3.47.1 and Dart 3.13.1. Flutter and Dart
+components are distributed under their respective BSD-style licenses and
+aggregate additional component notices in the SDK and generated application
+license registry.
+
+The project directly depends on cupertino_icons 1.0.9, distributed under the
+MIT License:
+
+Copyright (c) 2016 Vladimir Kharlampidi
+
+The project directly depends on shared_preferences 2.5.5 and share_plus
+13.3.0, distributed under the BSD 3-Clause License:
+
+Copyright 2013 The Flutter Authors
+Copyright 2017, the Flutter project authors
+
+The project directly depends on web 1.1.1, distributed under the BSD 3-Clause
+License:
+
+Copyright 2023, the Dart project authors.
+
+The full dependency licenses remain available through the Flutter-generated
+license registry and the corresponding package LICENSE files. Generated UI
+design references under docs/design are not runtime assets and are not
+included in the application asset manifest.
+
+The v0.1.1 local candidate also contains generated physical-object artwork and
+78 Rider-Waite-Smith card-image derivatives under assets/runtime. Their exact
+paths, source files, processing steps, SHA-256 values and candidate license
+statuses are recorded in assets/runtime/asset-manifest.json and
+docs/design/runtime-asset-attributions.md. These candidate statuses are not
+public redistribution approval; promote them only after the documented
+service-term and per-file jurisdiction review.
+
+When another dependency or content asset requires attribution or an additional
+notice, this file and the corresponding record in docs/licensing.md must be
+updated before that material is included in a release.

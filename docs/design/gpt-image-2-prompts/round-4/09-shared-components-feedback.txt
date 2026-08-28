@@ -1,0 +1,17 @@
+Use case: ui-mockup
+Asset type: expanded round-4 shared component and feedback specification board
+Primary request: Create an implementation-oriented Pocketools shared UI specification board proving that five tools and a fake module use one component system. Show light and dark themes, component states, reduced motion, vibration settings, Android/Web feedback degradation, and single-point global button styling.
+
+Output honesty and framing: Use the platform's available landscape raster and highest requested quality; do not claim native 4K or fixed source pixels. Build one readable design-system board with four large specification regions and generous outer background for later aspect-fit normalization to 3840 x 2160. This is not a product dashboard and not a code screenshot.
+
+Region 1, shared contracts: Show the exact names "AppToolScaffold", "AppButton", "AppStepper", "AppSegmentedControl", "AppResultCard", "AppGenerationStateView", and "AppNavShell". Visually connect five tool themes and one fake module to these same components. State "基础样式单点修改" and show that changing one AppButton token updates all modules without copying controls.
+
+Region 2, component states in light and dark: For AppButton show default, pressed, loading, disabled, focus, secondary, tertiary, and destructive; minimum target 48, height 48, radius 12, focus ring 2 with offset 2, press scale 0.985 and translateY 1. Show AppStepper with minus/input/plus and keyboard focus; AppSegmentedControl with selected/unselected and vertical large-text fallback; AppResultCard and AppGenerationStateView with normal/error/recovery/reduced variants. Preserve high contrast and no color-only meaning.
+
+Region 3, shell and responsive behavior: Show AppNavShell mobile bottom navigation and desktop left rail, both exact order "首页", "工具", "历史", "设置". Show AppToolScaffold mobile single column, desktop configuration/result split, and 200% text reflow. Tool differences are only semantic accent/theme and these primitives: TarotCardPrimitive, LiuyaoLinePrimitive, DicePrimitive, CoinPrimitive, PlayingCardPrimitive.
+
+Region 4, feedback settings and platform matrix: Show settings "动画", "减少动态效果", "振动" with vibration disableable. Android uses restrained semantic haptics: commit mediumImpact, first reveal selectionClick, complete lightImpact; no per-card/per-die/per-batch-item vibration. Web uses capability detection plus user setting, visibility, user activation, and platform permission/policy; unsupported, rejected, or error is "no-op". Static navigation does not force vibration. Reduced motion uses opacity-only 80 ms and is independent from the vibration switch. Recovery never replays old haptics or redraws.
+
+Architecture boundary: AppGenerationStateView receives an immutable session/outcome and a ToolVisualPrimitive; animation cannot access the random source. Modules may inject only ToolSemanticTheme, ToolVisualPrimitive, ToolInputFields, and ToolOutcomeSummaryRenderer. They may not override shared buttons, navigation, session state, history, or share pipelines.
+
+Visual style and prohibitions: Restrained modern toolbox, neutral matte surfaces, precise spacing, readable annotations, no neon, glass, game HUD, occult wallpaper, casino symbol, duplicated component sets, module-specific button variants, hidden mobile navigation, tiny type, watermark, trademark, third-party logo, runtime asset claim, or native-4K claim.

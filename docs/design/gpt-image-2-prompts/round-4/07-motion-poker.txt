@@ -1,0 +1,25 @@
+Use case: ui-mockup
+Asset type: expanded round-4 five-state mobile motion storyboard for playing cards
+Primary request: Create an implementation-ready Pocketools playing-card storyboard showing press, generate/shuffle, reveal/draw, complete, and reduced-motion states. The entire shuffled order and first three cards are frozen and persisted before any shuffle or draw animation.
+
+Output honesty and framing: Use the platform's available landscape raster and highest requested quality; do not claim native 4K or fixed source pixels. Place five complete equal 360:800 app frames in a readable horizontal timeline with no crop, no device chrome, and background margin for later aspect-fit normalization to a 3840 x 2160 review copy.
+
+Invariant shell and record, hard visible-text gate: Every frame is titled "抽扑克牌", shows bottom navigation "首页", "工具", "历史", "设置" with only "工具" selected, and represents includeJokers=false, deckSize=52, drawCount=3, without replacement. Every one of the five app frames must visibly repeat this exact fixed summary without omission: "标准牌组 · 不含大小王 · 52 张 · 抽取 3 张 · 无放回". Do not shorten it, move "无放回" to an unreadable footnote, or rely on another frame to supply it. Frozen result order is #1 黑桃 A / #2 红桃 10 / #3 梅花 K; remainingCount=49. Never leak, reroll, sort, duplicate, or replace these cards.
+
+State 1 "按压 · 90ms": Button exactly "洗牌并抽取" uses translateY 0→1 px and scale 1→0.985. Show the full fixed summary including the final words "无放回". No card identity or haptic before a successful commit.
+
+State 2 "生成／洗牌 · 520ms": Inputs are locked and status reads "结果已冻结，正在洗牌". Add a clearly readable in-frame persistence line exactly "中断或恢复继续同一已冻结结果，不重抽". Only neutral abstract card backs move as one stack with translateX within ±8 px and rotateZ within ±2 degrees. No face, rank, suit, joker, count mutation, particles, or result-dependent motion.
+
+State 3 "揭示／抽牌 · 640ms": Status reads "按冻结顺序抽牌" and repeats the clearly readable in-frame persistence line "中断或恢复继续同一已冻结结果，不重抽". Draw the three cards in frozen sequence, each visual step no longer than 360 ms, stagger 90 ms, travel at most 40 px, rotateZ at most 4 degrees, scale 0.96→1. The final card is visible by 640 ms. One "跳过动画" text action is allowed only here and lands on the same result.
+
+State 4 "完成 · 240ms": Show ordered cards #1 黑桃 A, #2 红桃 10, #3 梅花 K; "已抽取 3 张"; "剩余 49 张"; and primary action "重新抽取" plus "查看过程". Immediately beside or below the action, show this exact readable sentence: "重新抽取会创建新会话，不修改当前结果". Use settle translateY 4→0 px and scale 1.02→1, with no celebration.
+
+State 5 "减少动态 · 80ms": Show exactly the same complete record through opacity only, including the exact sentence "重新抽取会创建新会话，不修改当前结果". No shuffle, draw travel, flip, rotation, scale, blur, stagger, or particles. Focus and screen-reader destination match State 4.
+
+Haptic annotations outside app frames: Android commit after frozen persistence = one mediumImpact; first visible draw may use one selectionClick; completed layout may use one lightImpact; never vibrate per card. Web: only when user setting is on, vibration capability exists, platform permission/policy allows, page is visible, and the action is user-activated; suggested 12 ms commit, 8 ms first reveal, 10 ms complete; unsupported/rejected/error = no-op. Static navigation does not vibrate. Turning vibration off removes all haptics without changing the timeline or result.
+
+Interruption gate, hard annotation gate: Add one prominent annotation outside the app frames with the exact lead sentence "中断或恢复继续同一已冻结结果，不重抽". The annotation must explicitly cover skip, background, page hide, route leave, reduced motion, and resume: cancel remaining visual and pending haptic events, open the same persisted completed result, and never create another session. "重新抽取" is a deliberate new session only after completion, and the completion plus reduced-motion frames must state "重新抽取会创建新会话，不修改当前结果" inside the frame.
+
+Playing-card color gate, mandatory: All poker primary buttons, the selected "工具" navigation state, progress emphasis, and abstract card backs use the playingCards palette: vermilion red #B4232A with ink black and warm white. Blue must not be used as a poker primary, selected navigation color, card-back color, progress color, or decorative tool accent. Blue is allowed only for a system focus ring when the shared focus token requires it; the focus ring must remain visually distinct from the poker theme and must not recolor the button fill or selected tool state.
+
+Visual language and prohibitions: Restrained modern utility, matte warm-white and neutral surfaces, original abstract suit/rank marks, readable state text. No blue primary theme, branded card back, court illustration, casino, chip, wager, odds, cash, dealer, win/loss, realistic currency, confetti, repeated haptic, extra card, joker while off, hidden random source, watermark, trademark, device hardware, or prior-image reference.

@@ -1,0 +1,413 @@
+{
+  "schemaVersion": "rws-runtime/1.0.0",
+  "deckId": "rider-waite-smith",
+  "displayName": "Rider–Waite–Smith classic scan",
+  "cardCount": 78,
+  "imageSize": {
+    "width": 360,
+    "height": 600,
+    "format": "jpeg"
+  },
+  "source": {
+    "repository": "https://github.com/mixvlad/TarotCards",
+    "repositoryLicense": "CC BY-NC 4.0 for repository tooling; card source is separately documented",
+    "sourceDocument": "https://github.com/mixvlad/TarotCards/blob/main/SOURCES.md",
+    "artist": "Pamela Colman Smith",
+    "publisher": "Rider & Company",
+    "year": 1909,
+    "cardLicense": "Public Domain candidate; verify jurisdiction and per-file source before public distribution",
+    "attribution": "Pamela Colman Smith, Rider & Company (1909); source repository and Wikimedia Commons metadata"
+  },
+  "cards": [
+    {
+      "deckIndex": 0,
+      "file": "00_Fool.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/00_Fool.jpg"
+    },
+    {
+      "deckIndex": 1,
+      "file": "01_Magician.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/01_Magician.jpg"
+    },
+    {
+      "deckIndex": 2,
+      "file": "02_High_Priestess.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/02_High_Priestess.jpg"
+    },
+    {
+      "deckIndex": 3,
+      "file": "03_Empress.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/03_Empress.jpg"
+    },
+    {
+      "deckIndex": 4,
+      "file": "04_Emperor.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/04_Emperor.jpg"
+    },
+    {
+      "deckIndex": 5,
+      "file": "05_Hierophant.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/05_Hierophant.jpg"
+    },
+    {
+      "deckIndex": 6,
+      "file": "06_Lovers.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/06_Lovers.jpg"
+    },
+    {
+      "deckIndex": 7,
+      "file": "07_Chariot.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/07_Chariot.jpg"
+    },
+    {
+      "deckIndex": 8,
+      "file": "08_Strength.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/08_Strength.jpg"
+    },
+    {
+      "deckIndex": 9,
+      "file": "09_Hermit.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/09_Hermit.jpg"
+    },
+    {
+      "deckIndex": 10,
+      "file": "10_Wheel_of_Fortune.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/10_Wheel_of_Fortune.jpg"
+    },
+    {
+      "deckIndex": 11,
+      "file": "11_Justice.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/11_Justice.jpg"
+    },
+    {
+      "deckIndex": 12,
+      "file": "12_Hanged_Man.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/12_Hanged_Man.jpg"
+    },
+    {
+      "deckIndex": 13,
+      "file": "13_Death.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/13_Death.jpg"
+    },
+    {
+      "deckIndex": 14,
+      "file": "14_Temperance.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/14_Temperance.jpg"
+    },
+    {
+      "deckIndex": 15,
+      "file": "15_Devil.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/15_Devil.jpg"
+    },
+    {
+      "deckIndex": 16,
+      "file": "16_Tower.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/16_Tower.jpg"
+    },
+    {
+      "deckIndex": 17,
+      "file": "17_Star.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/17_Star.jpg"
+    },
+    {
+      "deckIndex": 18,
+      "file": "18_Moon.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/18_Moon.jpg"
+    },
+    {
+      "deckIndex": 19,
+      "file": "19_Sun.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/19_Sun.jpg"
+    },
+    {
+      "deckIndex": 20,
+      "file": "20_Judgement.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/20_Judgement.jpg"
+    },
+    {
+      "deckIndex": 21,
+      "file": "21_World.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/21_World.jpg"
+    },
+    {
+      "deckIndex": 22,
+      "file": "Wands01.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands01.jpg"
+    },
+    {
+      "deckIndex": 23,
+      "file": "Wands02.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands02.jpg"
+    },
+    {
+      "deckIndex": 24,
+      "file": "Wands03.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands03.jpg"
+    },
+    {
+      "deckIndex": 25,
+      "file": "Wands04.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands04.jpg"
+    },
+    {
+      "deckIndex": 26,
+      "file": "Wands05.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands05.jpg"
+    },
+    {
+      "deckIndex": 27,
+      "file": "Wands06.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands06.jpg"
+    },
+    {
+      "deckIndex": 28,
+      "file": "Wands07.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands07.jpg"
+    },
+    {
+      "deckIndex": 29,
+      "file": "Wands08.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands08.jpg"
+    },
+    {
+      "deckIndex": 30,
+      "file": "Wands09.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands09.jpg"
+    },
+    {
+      "deckIndex": 31,
+      "file": "Wands10.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands10.jpg"
+    },
+    {
+      "deckIndex": 32,
+      "file": "Wands11.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands11.jpg"
+    },
+    {
+      "deckIndex": 33,
+      "file": "Wands12.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands12.jpg"
+    },
+    {
+      "deckIndex": 34,
+      "file": "Wands13.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands13.jpg"
+    },
+    {
+      "deckIndex": 35,
+      "file": "Wands14.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Wands14.jpg"
+    },
+    {
+      "deckIndex": 36,
+      "file": "Cups01.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups01.jpg"
+    },
+    {
+      "deckIndex": 37,
+      "file": "Cups02.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups02.jpg"
+    },
+    {
+      "deckIndex": 38,
+      "file": "Cups03.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups03.jpg"
+    },
+    {
+      "deckIndex": 39,
+      "file": "Cups04.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups04.jpg"
+    },
+    {
+      "deckIndex": 40,
+      "file": "Cups05.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups05.jpg"
+    },
+    {
+      "deckIndex": 41,
+      "file": "Cups06.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups06.jpg"
+    },
+    {
+      "deckIndex": 42,
+      "file": "Cups07.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups07.jpg"
+    },
+    {
+      "deckIndex": 43,
+      "file": "Cups08.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups08.jpg"
+    },
+    {
+      "deckIndex": 44,
+      "file": "Cups09.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups09.jpg"
+    },
+    {
+      "deckIndex": 45,
+      "file": "Cups10.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups10.jpg"
+    },
+    {
+      "deckIndex": 46,
+      "file": "Cups11.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups11.jpg"
+    },
+    {
+      "deckIndex": 47,
+      "file": "Cups12.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups12.jpg"
+    },
+    {
+      "deckIndex": 48,
+      "file": "Cups13.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups13.jpg"
+    },
+    {
+      "deckIndex": 49,
+      "file": "Cups14.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Cups14.jpg"
+    },
+    {
+      "deckIndex": 50,
+      "file": "Swords01.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords01.jpg"
+    },
+    {
+      "deckIndex": 51,
+      "file": "Swords02.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords02.jpg"
+    },
+    {
+      "deckIndex": 52,
+      "file": "Swords03.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords03.jpg"
+    },
+    {
+      "deckIndex": 53,
+      "file": "Swords04.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords04.jpg"
+    },
+    {
+      "deckIndex": 54,
+      "file": "Swords05.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords05.jpg"
+    },
+    {
+      "deckIndex": 55,
+      "file": "Swords06.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords06.jpg"
+    },
+    {
+      "deckIndex": 56,
+      "file": "Swords07.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords07.jpg"
+    },
+    {
+      "deckIndex": 57,
+      "file": "Swords08.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords08.jpg"
+    },
+    {
+      "deckIndex": 58,
+      "file": "Swords09.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords09.jpg"
+    },
+    {
+      "deckIndex": 59,
+      "file": "Swords10.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords10.jpg"
+    },
+    {
+      "deckIndex": 60,
+      "file": "Swords11.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords11.jpg"
+    },
+    {
+      "deckIndex": 61,
+      "file": "Swords12.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords12.jpg"
+    },
+    {
+      "deckIndex": 62,
+      "file": "Swords13.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords13.jpg"
+    },
+    {
+      "deckIndex": 63,
+      "file": "Swords14.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Swords14.jpg"
+    },
+    {
+      "deckIndex": 64,
+      "file": "Pents01.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents01.jpg"
+    },
+    {
+      "deckIndex": 65,
+      "file": "Pents02.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents02.jpg"
+    },
+    {
+      "deckIndex": 66,
+      "file": "Pents03.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents03.jpg"
+    },
+    {
+      "deckIndex": 67,
+      "file": "Pents04.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents04.jpg"
+    },
+    {
+      "deckIndex": 68,
+      "file": "Pents05.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents05.jpg"
+    },
+    {
+      "deckIndex": 69,
+      "file": "Pents06.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents06.jpg"
+    },
+    {
+      "deckIndex": 70,
+      "file": "Pents07.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents07.jpg"
+    },
+    {
+      "deckIndex": 71,
+      "file": "Pents08.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents08.jpg"
+    },
+    {
+      "deckIndex": 72,
+      "file": "Pents09.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents09.jpg"
+    },
+    {
+      "deckIndex": 73,
+      "file": "Pents10.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents10.jpg"
+    },
+    {
+      "deckIndex": 74,
+      "file": "Pents11.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents11.jpg"
+    },
+    {
+      "deckIndex": 75,
+      "file": "Pents12.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents12.jpg"
+    },
+    {
+      "deckIndex": 76,
+      "file": "Pents13.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents13.jpg"
+    },
+    {
+      "deckIndex": 77,
+      "file": "Pents14.jpg",
+      "assetPath": "assets/runtime/tarot/rider_waite/Pents14.jpg"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Use case: ui-mockup
+Asset type: independent expanded round-4 16:10 desktop page
+Primary request: Create one complete Pocketools v0.1.0 desktop home page as a single 16:10 interface composition. This is one product page, not a multi-page board, landing page, browser screenshot, or concept art.
+
+Source-size honesty: The image platform may return different raster dimensions. Do not claim native 1600 x 1000, 4K, or any guaranteed source pixel size. Keep all interface content inside one clearly bounded 16:10 page composition with generous pure-background safety around it so the full source can later be aspect-fit and padded to 1600 x 1000 without losing content. Do not place captions or UI outside that page.
+
+Shell: Use a true desktop left navigation with entries exactly "首页", "工具", "历史", "设置" in that order and select only "首页". Use light neutral matte surfaces, crisp system type, 8-point spacing, visible focus, and restrained depth. No bottom navigation, hamburger, account, avatar, cloud sync, analytics, browser chrome, or marketing navigation.
+
+Home: Heading exactly "今天想用哪个工具？". Show five distinct implementable entries in reading order "塔罗", "六爻起卦", "D20 检定", "抛硬币", "抽扑克牌" using original abstract line primitives rather than recolored duplicates. Show offline banner "当前离线，核心工具仍可使用。". Recent results use only fixed non-private summaries: "D20 检定 · 自定义 · 总值 41 · 达到 DC 35" and "抽扑克牌 · 不含大小王 · 3 张 · 剩余 49 张".
+
+Responsive and accessibility cues: 240 px-equivalent rail, 32 px-equivalent content gutter, maximum 1120 px-equivalent content region, keyboard focus on one tool, readable 200% text-ready cards, and no color-only meaning. Keep all five tools visible without an unavailable placeholder.
+
+Prohibit: four-tool home, missing poker, private question, fake user name/date, casino, poker chip, wager, realistic currency, traditional/copyrighted tarot art, watermark, trademark, glass, neon, tiny text, extra navigation, clipped page, or prior-image reference.

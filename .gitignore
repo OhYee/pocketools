@@ -1,0 +1,38 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor state
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Dart and Flutter generated state
+.dart_tool/
+.packages
+.pub/
+build/
+coverage/
+output/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Web and packaging output
+dist/
+*.ipa
+*.apk
+*.aab
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local reports and generated design exports
+local/
+tmp/
+docs/reports/

@@ -1,0 +1,1365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": 5,
+  "name": "Pocketools v0.1.0 gpt-image-2 design assets",
+  "status": "g1_design_pass",
+  "currentRound": 4,
+  "model": "gpt-image-2",
+  "modelClaimType": "task_request",
+  "modelMetadataVerified": false,
+  "modelEvidence": "平台 imagegen 通道按任务要求生成，CLI metadata 未验证",
+  "quality": "high",
+  "qualityClaimType": "task_request",
+  "sourceSize": "platform-dependent",
+  "historicalRound1And2SourceSize": "1672x941",
+  "size": "3840x2160",
+  "archiveSize": "3840x2160",
+  "native4K": false,
+  "archiveProcessing": "post_process_normalization",
+  "outputFormat": "png",
+  "background": "opaque",
+  "generatedAt": "2026-08-23",
+  "generationMode": "platform-imagegen",
+  "cliAttempt": {
+    "status": "failed",
+    "httpStatus": 401,
+    "artifactProduced": false,
+    "reason": "OPENAI_API_KEY environment authentication failed"
+  },
+  "runtimeAsset": false,
+  "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+  "g1": {
+    "status": "PASS",
+    "scope": "交互与视觉设计证据",
+    "reviewedAt": "2026-08-23",
+    "evidence": "Expanded Round-4 revision-2 的 07、08、10c、10d 与复用 10a/10b 的 assembled 已完成逐图视觉和确定性后处理验收",
+    "boundary": "runtimeAsset=false；内部设计参考；PASS 不代表运行时资产许可、内容发布许可或法律结论"
+  },
+  "activeMockupCount": 11,
+  "round1": {
+    "status": "needs_revision",
+    "generatedAt": "2026-08-23",
+    "sourceDirectory": "output/imagegen/source",
+    "archiveCandidateDirectory": "output/imagegen",
+    "evidenceImmutable": true,
+    "note": "资产条目中的 sourcePath、archiveCandidatePath、source、archiveCandidate、acceptanceIssues 和 reviewStatus 均为首轮拒绝证据"
+  },
+  "round2": {
+    "status": "round2_reviewed_partial",
+    "generatedAt": null,
+    "observedAt": "2026-08-23",
+    "reviewedAt": "2026-08-23",
+    "generationMode": null,
+    "modelMetadataVerified": false,
+    "sourceDirectory": "output/imagegen/round-2/source",
+    "archiveCandidateDirectory": "output/imagegen/round-2",
+    "sourceSize": "1672x941",
+    "archiveCandidateSize": "3840x2160",
+    "opaque": true,
+    "acceptedCount": 2,
+    "needsRevisionCount": 4,
+    "runtimeAsset": false
+  },
+  "round3": {
+    "status": "reviewed_partial",
+    "reviewStatus": "reviewed",
+    "generatedAt": null,
+    "observedAt": "2026-08-23",
+    "reviewedAt": "2026-08-23",
+    "generationMode": "platform-imagegen-observed-files",
+    "modelMetadataVerified": false,
+    "mobile": {
+      "sourceDirectory": "output/imagegen/round-3/source",
+      "archiveCandidateDirectory": "output/imagegen/round-3",
+      "sourceSize": "1672x941",
+      "archiveCandidateSize": "3840x2160",
+      "acceptedIds": [
+        "02-motion-tarot",
+        "03-motion-liuyao",
+        "05-motion-coin"
+      ],
+      "acceptedCount": 3
+    },
+    "web": {
+      "status": "scope-invalidated/audit-only",
+      "reason": "只存在新增扑克范围前的 06a/06b，实际尺寸不符合 round-3 manifest 假设且缺少扑克；不执行裁剪或组装",
+      "availableSources": [
+        {
+          "id": "06a-home",
+          "path": "output/imagegen/round-3/web-source/06a-home.png",
+          "size": "1568x1003",
+          "opaque": true,
+          "sha256": "6678c75c0c135baa825a06a700e47fd7d0002b97beff5c262744e2299b5d4413"
+        },
+        {
+          "id": "06b-d20-config",
+          "path": "output/imagegen/round-3/web-source/06b-d20-config.png",
+          "size": "1586x992",
+          "opaque": true,
+          "sha256": "b9ebc31c241e79f216072d6d24912d9681aa569ba2763ab2c1d81f93c2cd942d"
+        }
+      ],
+      "missingSources": [
+        "06c-d20-result",
+        "06d-history-share"
+      ],
+      "assembled": false,
+      "assembledPath": "output/imagegen/round-3/web/06-responsive-web-assembled.png"
+    },
+    "runtimeAsset": false
+  },
+  "round4": {
+    "status": "accepted",
+    "reviewStatus": "accepted",
+    "generatedAt": null,
+    "observedAt": "2026-08-23",
+    "reviewedAt": "2026-08-23",
+    "generationMode": "platform-imagegen-observed-files",
+    "modelMetadataVerified": false,
+    "sourcePixelAssumption": false,
+    "sourceSize": "platform-dependent",
+    "native4KClaim": false,
+    "reviewedCount": 8,
+    "acceptedCount": 8,
+    "needsRevisionCount": 0,
+    "pendingRevisionCount": 0,
+    "pendingCount": 0,
+    "activeFinalCount": 7,
+    "revisionBatch2": {
+      "status": "accepted",
+      "generationObserved": true,
+      "reviewStatus": "accepted",
+      "reviewedAt": "2026-08-23",
+      "preserveFailedFiles": true,
+      "targets": [
+        {
+          "id": "07-motion-poker",
+          "promptPath": "docs/design/gpt-image-2-prompts/round-4/07-motion-poker.txt",
+          "targetSourcePath": "output/imagegen/round-4/revision-2/source/07-motion-poker.png",
+          "targetDerivedPath": "output/imagegen/round-4/revision-2/review/07-motion-poker.png"
+        },
+        {
+          "id": "08-explanations",
+          "promptPath": "docs/design/gpt-image-2-prompts/round-4/08-explanations.txt",
+          "targetSourcePath": "output/imagegen/round-4/revision-2/source/08-explanations.png",
+          "targetDerivedPath": "output/imagegen/round-4/revision-2/review/08-explanations.png"
+        },
+        {
+          "id": "10c-tarot-liuyao-explanations",
+          "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10c-tarot-liuyao-explanations.txt",
+          "targetSourcePath": "output/imagegen/round-4/revision-2/web-source/10c-tarot-liuyao-explanations.png",
+          "targetDerivedPath": "output/imagegen/round-4/revision-2/web-tiles/10c-tarot-liuyao-explanations.png"
+        },
+        {
+          "id": "10d-history-share-settings",
+          "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10d-history-share-settings.txt",
+          "targetSourcePath": "output/imagegen/round-4/revision-2/web-source/10d-history-share-settings.png",
+          "targetDerivedPath": "output/imagegen/round-4/revision-2/web-tiles/10d-history-share-settings.png"
+        }
+      ],
+      "noRegeneration": [
+        {
+          "id": "10a-five-tools-home",
+          "reviewStatus": "accepted_tile"
+        },
+        {
+          "id": "10b-poker-config-result",
+          "reviewStatus": "accepted_tile"
+        }
+      ],
+      "targetAssembledPath": "output/imagegen/round-4/revision-2/web/10-responsive-expanded-assembled.png",
+      "assemblyResult": "10c/10d 新 tile accepted；复用 10a/10b accepted_tile 按既定坐标组装并通过"
+    },
+    "promptDirectories": [
+      "docs/design/gpt-image-2-prompts/round-4",
+      "docs/design/gpt-image-2-prompts/round-4-web"
+    ],
+    "reviewCopy": {
+      "canvas": "3840x2160",
+      "method": "aspect-fit-whole-source-with-padding",
+      "cropPolicy": "only verified pure-background crop; never remove interface content"
+    },
+    "assembly": {
+      "canvas": "3840x2160",
+      "horizontalGap": 320,
+      "verticalGap": 80,
+      "tiles": [
+        {
+          "id": "10a-five-tools-home",
+          "x": 160,
+          "y": 40,
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "id": "10b-poker-config-result",
+          "x": 2080,
+          "y": 40,
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "id": "10c-tarot-liuyao-explanations",
+          "x": 160,
+          "y": 1120,
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "id": "10d-history-share-settings",
+          "x": 2080,
+          "y": 1120,
+          "width": 1600,
+          "height": 1000
+        }
+      ]
+    },
+    "assets": [
+      {
+        "id": "01-mobile-poker-core",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4/01-mobile-poker-core.txt",
+        "sourcePath": "output/imagegen/round-4/source/01-mobile-poker-core.png",
+        "archiveCandidatePath": "output/imagegen/round-4/review/01-mobile-poker-core.png",
+        "reviewCopyPath": "output/imagegen/round-4/review/01-mobile-poker-core.png",
+        "finalPath": "docs/design/mockups/round-4/01-mobile-poker-core.png",
+        "status": "accepted",
+        "reviewStatus": "accepted",
+        "active": true,
+        "copiedToFinal": true,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "runtimeAsset": false,
+        "source": {
+          "size": "1536x1024",
+          "opaque": true,
+          "sha256": "84bcab4a3e69b65df7ff77092215c7c005398e347a3c1e8b40befa043087b03f"
+        },
+        "reviewCopy": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "e78640c8ed8d52c804dcfac2496b9a5105632cb602378fbef2466966a1752431",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "3240x2160",
+          "padding": {
+            "left": 300,
+            "top": 0,
+            "right": 300,
+            "bottom": 0,
+            "color": "#F7F7F5"
+          },
+          "native4K": false
+        },
+        "findings": [
+          "三帧均完整；首页按指定顺序展示塔罗、六爻起卦、D20 检定、抛硬币、抽扑克牌，且只选中首页",
+          "扑克配置固定为 includeJokers=false、52 张、抽取 3 张、范围 1～52、无放回并预计剩余 49 张，工具导航选中正确",
+          "结果按原序显示黑桃 A、红桃 10、梅花 K，剩余 49 张，并明确重新抽取开启新会话且不修改当前结果",
+          "牌面为抽象标准花色与点数，无赌场、筹码、下注、赔率、现金、品牌牌背或第三方素材"
+        ],
+        "requirements": ["FR-001", "FR-002", "FR-048", "FR-049", "NFR-007", "NFR-020", "NFR-021", "REL-012"]
+      },
+      {
+        "id": "07-motion-poker",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4/07-motion-poker.txt",
+        "sourcePath": "output/imagegen/round-4/source/07-motion-poker.png",
+        "archiveCandidatePath": "output/imagegen/round-4/review/07-motion-poker.png",
+        "reviewCopyPath": "output/imagegen/round-4/review/07-motion-poker.png",
+        "finalPath": "docs/design/mockups/round-4/07-motion-poker.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_revision2",
+        "regenerationRequired": false,
+        "active": true,
+        "copiedToFinal": true,
+        "currentEvidence": "revision2",
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "runtimeAsset": false,
+        "promptRevision": 2,
+        "revisionRequestedAt": "2026-08-23",
+        "source": {
+          "size": "1690x931",
+          "opaque": true,
+          "sha256": "9f72f13e9b75b275bfae283b4a71ed21aeeb1eed8b1151034dc4028cd112c1b3"
+        },
+        "reviewCopy": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "7c0e3cea2040f0006d8b8750a1df0b76a9f696cce15d5a1033d30d95f18ff621",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "3840x2115",
+          "padding": {
+            "left": 0,
+            "top": 22,
+            "right": 0,
+            "bottom": 23,
+            "color": "#F7F7F5"
+          },
+          "native4K": false
+        },
+        "findings": [
+          "五个完整 frame、四项底栏与工具选中态正确；90/520/640/240/80 ms 五态清楚",
+          "生成态明确结果已冻结且只显示中性牌背；揭示、完成和减少动态保持黑桃 A、红桃 10、梅花 K 原序与 49 张剩余数",
+          "Android mediumImpact、selectionClick、lightImpact 及 Web 12/8/10 ms、能力与授权条件、不支持 no-op、静态导航不振动均有框外注释"
+        ],
+        "acceptanceIssues": [
+          "五帧冻结摘要均缺少“无放回”，不能从图上确认同一无放回记录",
+          "完成与减少动态态只有“重新抽取”按钮，未说明该操作创建新会话；画板也未覆盖后台、页面隐藏、跳过或恢复必须落到同一持久化结果的中断合同",
+          "主按钮、选中导航与牌背使用蓝色工具强调，违反 playingCards 浅色主色 #B4232A、辅色 #28333B 与中性纸面的 token 合同"
+        ],
+        "revisionRequirements": [
+          "五个 frame 逐帧显示完整摘要：标准牌组 · 不含大小王 · 52 张 · 抽取 3 张 · 无放回",
+          "完成和减少动态态逐字显示：重新抽取会创建新会话，不修改当前结果",
+          "生成态、揭示态和框外中断注释逐字显示：中断或恢复继续同一已冻结结果，不重抽",
+          "主按钮、工具选中态、进度强调和牌背使用朱红 #B4232A、墨黑与暖白；蓝色只允许作为共享系统 focus ring"
+        ],
+        "revision2": {
+          "status": "accepted",
+          "reviewStatus": "accepted",
+          "sourcePath": "output/imagegen/round-4/revision-2/source/07-motion-poker.png",
+          "reviewCopyPath": "output/imagegen/round-4/revision-2/review/07-motion-poker.png",
+          "finalPath": "docs/design/mockups/round-4/07-motion-poker.png",
+          "observedAt": "2026-08-23",
+          "reviewedAt": "2026-08-23",
+          "copiedToFinal": true,
+          "runtimeAsset": false,
+          "source": {
+            "size": "1693x929",
+            "opaque": true,
+            "sha256": "5a48ccccf29e5abca84175925d79f92d185da935b8aaf557c38e97f356d2a8fd"
+          },
+          "reviewCopy": {
+            "size": "3840x2160",
+            "opaque": true,
+            "sha256": "5400f88aeed0ae16cf8f112b26cb241f112169629206441cf2b7d51bb4f352bc",
+            "method": "aspect-fit-whole-source-with-padding",
+            "fitSize": "3840x2107",
+            "padding": {
+              "left": 0,
+              "top": 26,
+              "right": 0,
+              "bottom": 27,
+              "color": "#F7F7F5"
+            },
+            "rmseAgainstDeterministicFit": 0,
+            "native4K": false
+          },
+          "findings": [
+            "五个完整 frame 均显示标准牌组、不含大小王、52 张、抽取 3 张、无放回，四项底栏只选中工具",
+            "生成与揭示态明确中断或恢复继续同一已冻结结果且不重抽；完成与减少动态态明确重新抽取创建新会话且不修改当前结果",
+            "冻结结果保持黑桃 A、红桃 10、梅花 K 原序与剩余 49 张；减少动态为 80 ms 完成记录",
+            "主按钮、工具选中态、进度和抽象牌背使用朱红、墨黑与暖白；Android/Web 反馈、no-op 与静态导航边界正确"
+          ]
+        },
+        "requirements": ["FR-048", "FR-049", "FR-052", "NFR-018", "NFR-019", "NFR-020", "REL-012"]
+      },
+      {
+        "id": "08-explanations",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4/08-explanations.txt",
+        "sourcePath": "output/imagegen/round-4/source/08-explanations.png",
+        "archiveCandidatePath": "output/imagegen/round-4/review/08-explanations.png",
+        "reviewCopyPath": "output/imagegen/round-4/review/08-explanations.png",
+        "finalPath": "docs/design/mockups/round-4/08-explanations.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_revision2",
+        "regenerationRequired": false,
+        "active": true,
+        "copiedToFinal": true,
+        "currentEvidence": "revision2",
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "promptRevision": 2,
+        "revisionRequestedAt": "2026-08-23",
+        "source": {
+          "size": "1536x1024",
+          "opaque": true,
+          "sha256": "da6c9f5ea3e8002feebb6abdec07be80e3f1972bbf62b35ae321175065d46f0e"
+        },
+        "reviewCopy": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "c0beea094abd38598dbc9bf21a4d7ed0fda459286e051ac2268587f1afd4632d",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "3240x2160",
+          "padding": {
+            "left": 300,
+            "top": 0,
+            "right": 300,
+            "bottom": 0,
+            "color": "#F7F7F5"
+          },
+          "rmseAgainstDeterministicFit": 0,
+          "native4K": false
+        },
+        "findings": [
+          "四个完整移动 frame、四项底栏与工具选中态正确",
+          "塔罗单牌和三牌覆盖关键词、传统象征、正逆位差异、当前位置、反思问题与非确定性组合提示",
+          "六爻覆盖卦名、上下卦、三爻动、变卦、结构形成与不扩纳甲边界",
+          "传统原文、现代改写、原创简释分区，高风险边界、隐私说明与文化娱乐免责声明可见"
+        ],
+        "acceptanceIssues": [
+          "原创简释行写明内容包版本 v0.1.0（含此内容）并声明仅限应用内使用，提前形成已纳入运行时内容包和已获应用内许可的结论；应改为 runtimeAsset=false、内部设计参考、待 PM 最终许可复核且复核前不进入发布内容包"
+        ],
+        "revisionRequirements": [
+          "来源、许可与免责声明页显式显示 runtimeAsset=false、内部设计参考、待 PM 最终许可复核、复核前不进入发布内容包",
+          "传统原文、现代改写、原创简释三行均只能使用内部参考、待复核、复核前不发布状态，候选内容包字段写未进入发布内容包",
+          "原创简释必须标为候选内部参考；原创身份不构成自动发布许可",
+          "禁止已进入内容包、应用内许可、可发布、已许可或进入发布包等结论"
+        ],
+        "revision2": {
+          "status": "accepted",
+          "reviewStatus": "accepted",
+          "sourcePath": "output/imagegen/round-4/revision-2/source/08-explanations.png",
+          "reviewCopyPath": "output/imagegen/round-4/revision-2/review/08-explanations.png",
+          "finalPath": "docs/design/mockups/round-4/08-explanations.png",
+          "observedAt": "2026-08-23",
+          "reviewedAt": "2026-08-23",
+          "copiedToFinal": true,
+          "runtimeAsset": false,
+          "source": {
+            "size": "1536x1024",
+            "opaque": true,
+            "sha256": "eef36b7d819ee0794e10171dfed103a88d4550d1d343a9bfade4b247aeee1d48"
+          },
+          "reviewCopy": {
+            "size": "3840x2160",
+            "opaque": true,
+            "sha256": "f0b075bb3f7681683fed3901c066db9c1c7be03c5195cfe99fd8f304962c4803",
+            "method": "aspect-fit-whole-source-with-padding",
+            "fitSize": "3240x2160",
+            "padding": {
+              "left": 300,
+              "top": 0,
+              "right": 300,
+              "bottom": 0,
+              "color": "#F7F7F5"
+            },
+            "rmseAgainstDeterministicFit": 0,
+            "native4K": false
+          },
+          "findings": [
+            "四个完整移动 frame 保留塔罗单牌、三牌组合、六爻结构、来源许可与免责声明的全部必需字段",
+            "来源页显式显示 runtimeAsset=false、内部设计参考、待 PM 最终许可复核、复核前不进入发布内容包",
+            "传统原文、现代改写和原创简释均标为未进入发布内容包；原创简释明确为候选内部参考，没有已授权或可发布暗示",
+            "文化娱乐、高风险、隐私与非确定性免责声明完整，四项底栏只选中工具"
+          ]
+        },
+        "requirements": ["FR-050", "FR-051", "NFR-007", "NFR-015", "REL-012"]
+      },
+      {
+        "id": "09-shared-components-feedback",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4/09-shared-components-feedback.txt",
+        "sourcePath": "output/imagegen/round-4/source/09-shared-components-feedback.png",
+        "archiveCandidatePath": "output/imagegen/round-4/review/09-shared-components-feedback.png",
+        "reviewCopyPath": "output/imagegen/round-4/review/09-shared-components-feedback.png",
+        "finalPath": "docs/design/mockups/round-4/09-shared-components-feedback.png",
+        "status": "accepted",
+        "reviewStatus": "accepted",
+        "active": true,
+        "copiedToFinal": true,
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1536x1024",
+          "opaque": true,
+          "sha256": "81d5311920113d9fc7f87bdd273d87f8c4f7204d2d69a1b592606155db6a7c8f"
+        },
+        "reviewCopy": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "cd9d857a8b31bd4c1a81e75643451a0cd5563e4acba2ef9b4b62aea06bb07f73",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "3240x2160",
+          "padding": {
+            "left": 300,
+            "top": 0,
+            "right": 300,
+            "bottom": 0,
+            "color": "#F7F7F5"
+          },
+          "rmseAgainstDeterministicFit": 0,
+          "native4K": false
+        },
+        "findings": [
+          "AppToolScaffold、AppButton、AppStepper、AppSegmentedControl、AppResultCard、AppGenerationStateView、AppNavShell 七个公共组件名称准确",
+          "五工具与 fake 模块共享同一组件系统，基础样式单点修改 AppButton token 后全局生效",
+          "light/dark、按钮完整状态、移动／桌面／200% 字体、五个 visual primitive 与共享导航顺序完整",
+          "Android/Web 反馈矩阵、减少动态与振动独立、失败 no-op、恢复不补发触觉和动画不得访问随机源的架构边界正确"
+        ],
+        "requirements": ["FR-041", "FR-052", "NFR-007", "NFR-018", "NFR-019", "NFR-022", "NFR-023", "NFR-024", "REL-013"]
+      },
+      {
+        "id": "10a-five-tools-home",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10a-five-tools-home.txt",
+        "sourcePath": "output/imagegen/round-4/web-source/10a-five-tools-home.png",
+        "tilePath": "output/imagegen/round-4/web-tiles/10a-five-tools-home.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_tile",
+        "regenerationRequired": false,
+        "active": false,
+        "copiedToFinal": false,
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1586x992",
+          "opaque": true,
+          "sha256": "1f9147c9c57bd4a352e787413119c23ec4b1319785e04580cf166795fe4d9592"
+        },
+        "tile": {
+          "size": "1600x1000",
+          "opaque": true,
+          "sha256": "f173451a1e64140753aa12ae08938942ef0fd0ae7c779443d29315009858ac8b",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "1599x1000",
+          "padding": {"left": 0, "top": 0, "right": 1, "bottom": 0, "color": "#F7F7F5"},
+          "rmseAgainstDeterministicFit": 0
+        },
+        "findings": [
+          "单一完整 16:10 桌面页面、四项左侧导航且只选中首页",
+          "五工具按塔罗、六爻起卦、D20 检定、抛硬币、抽扑克牌顺序完整",
+          "离线横幅、D20 41/DC35 与扑克 3 张/剩余 49 张非私人摘要、键盘焦点和无博彩边界正确"
+        ]
+      },
+      {
+        "id": "10b-poker-config-result",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10b-poker-config-result.txt",
+        "sourcePath": "output/imagegen/round-4/web-source/10b-poker-config-result.png",
+        "tilePath": "output/imagegen/round-4/web-tiles/10b-poker-config-result.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_tile",
+        "regenerationRequired": false,
+        "active": false,
+        "copiedToFinal": false,
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1586x992",
+          "opaque": true,
+          "sha256": "64f83b5f94b3241d399ede4edb535c592ff9b298d79f411f8aac4fa066d229cf"
+        },
+        "tile": {
+          "size": "1600x1000",
+          "opaque": true,
+          "sha256": "3b8d2e684365d1438aa78e205f2556ad7c3f696617e127cb30aabbb239d150f7",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "1599x1000",
+          "padding": {"left": 0, "top": 0, "right": 1, "bottom": 0, "color": "#F7F7F5"},
+          "rmseAgainstDeterministicFit": 0
+        },
+        "findings": [
+          "工具导航、大小王默认关闭、标准 52 张、抽取 3 张、范围 1～52、无放回与主动作正确",
+          "结果严格为黑桃 A、红桃 10、梅花 K 原序，牌 ID、剩余 49 张、不可修改、新会话重抽和四项操作一致",
+          "朱红／墨黑扑克语义、抽象牌面、规则／算法版本和无博彩边界正确"
+        ]
+      },
+      {
+        "id": "10c-tarot-liuyao-explanations",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10c-tarot-liuyao-explanations.txt",
+        "sourcePath": "output/imagegen/round-4/web-source/10c-tarot-liuyao-explanations.png",
+        "tilePath": "output/imagegen/round-4/web-tiles/10c-tarot-liuyao-explanations.png",
+        "finalPath": "docs/design/mockups/round-4/10c-tarot-liuyao-explanations.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_revision2_tile",
+        "regenerationRequired": false,
+        "active": true,
+        "copiedToFinal": true,
+        "currentEvidence": "revision2",
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "promptRevision": 2,
+        "revisionRequestedAt": "2026-08-23",
+        "source": {
+          "size": "1586x992",
+          "opaque": true,
+          "sha256": "938b1e5acee12b9cec5ebc63fa82a4c8b3b6712c484d2b6d0dd52ef49ecacea0"
+        },
+        "tile": {
+          "size": "1600x1000",
+          "opaque": true,
+          "sha256": "13cc6b01c62b3c1dffc693d4ca93d60e5ccde905e96bdace00fd55eed2a464ff",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "1599x1000",
+          "padding": {"left": 0, "top": 0, "right": 1, "bottom": 0, "color": "#F7F7F5"},
+          "rmseAgainstDeterministicFit": 0
+        },
+        "findings": [
+          "塔罗三牌位置、关键词、象征、正逆位、当前位置、反思问题、组合提示与免责声明完整",
+          "六爻本卦、上下卦、三爻动、变卦、来源三分区、不扩纳甲与部分待许可状态完整"
+        ],
+        "acceptanceIssues": [
+          "塔罗来源说明写明状态：可发布，与 runtimeAsset=false 及内部设计参考、待 PM 最终许可复核的边界冲突；应改为待 PM 许可复核，复核前不进入发布内容包"
+        ],
+        "revisionRequirements": [
+          "塔罗与六爻每个来源状态只允许：内部设计参考 · 待 PM 最终许可复核 · 复核前不发布",
+          "页面持续显示 runtimeAsset=false · 复核前不进入发布内容包",
+          "禁止可发布、已许可、已进入内容包或进入发布包等状态；原创简释同样不得自动放行",
+          "保留关键词、象征、正逆位、位置、反思、组合、卦象、动爻、变卦、来源分区与免责声明"
+        ],
+        "revision2": {
+          "status": "accepted",
+          "reviewStatus": "accepted_tile",
+          "sourcePath": "output/imagegen/round-4/revision-2/web-source/10c-tarot-liuyao-explanations.png",
+          "tilePath": "output/imagegen/round-4/revision-2/web-tiles/10c-tarot-liuyao-explanations.png",
+          "finalPath": "docs/design/mockups/round-4/10c-tarot-liuyao-explanations.png",
+          "observedAt": "2026-08-23",
+          "reviewedAt": "2026-08-23",
+          "copiedToFinal": true,
+          "runtimeAsset": false,
+          "source": {
+            "size": "1586x992",
+            "opaque": true,
+            "sha256": "5369aa38d77ea9bed68837d56aa617eaa1bcb6c9fd70ce06690cd57ea2ef05f7"
+          },
+          "tile": {
+            "size": "1600x1000",
+            "opaque": true,
+            "sha256": "3f212800de97cb371780e0f7ae33352088b4ba0793f9903b499f8ae3fa32ed51",
+            "method": "aspect-fit-whole-source-with-padding",
+            "fitSize": "1599x1000",
+            "padding": {
+              "left": 0,
+              "top": 0,
+              "right": 1,
+              "bottom": 0,
+              "color": "#F7F7F5"
+            },
+            "rmseAgainstDeterministicFit": 0
+          },
+          "findings": [
+            "塔罗三牌的关键词、传统象征、正逆位、当前位置、反思问题、组合提示与非确定性免责声明完整",
+            "六爻本卦、上下卦、三爻动、变卦、卦象基础、动爻与变卦、传统原文、现代改写、原创简释与不扩纳甲边界完整",
+            "页面与每个来源状态均显示内部设计参考、待 PM 最终许可复核、复核前不发布，并显示 runtimeAsset=false 与复核前不进入发布内容包",
+            "没有可发布、已许可、已进入内容包或其他授权暗示"
+          ]
+        }
+      },
+      {
+        "id": "10d-history-share-settings",
+        "promptPath": "docs/design/gpt-image-2-prompts/round-4-web/10d-history-share-settings.txt",
+        "sourcePath": "output/imagegen/round-4/web-source/10d-history-share-settings.png",
+        "tilePath": "output/imagegen/round-4/web-tiles/10d-history-share-settings.png",
+        "finalPath": "docs/design/mockups/round-4/10d-history-share-settings.png",
+        "status": "accepted",
+        "reviewStatus": "accepted_revision2_tile",
+        "regenerationRequired": false,
+        "active": true,
+        "copiedToFinal": true,
+        "currentEvidence": "revision2",
+        "runtimeAsset": false,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "promptRevision": 2,
+        "revisionRequestedAt": "2026-08-23",
+        "source": {
+          "size": "1586x992",
+          "opaque": true,
+          "sha256": "4bf9c1924030a724f06b54fc1c0c958dac3366180ac784fb6da54a844dcfe6d1"
+        },
+        "tile": {
+          "size": "1600x1000",
+          "opaque": true,
+          "sha256": "eeac2a8c24d56968d1ac57bc08398e08e5e6bf1dfde48efcea67c5511baef76d",
+          "method": "aspect-fit-whole-source-with-padding",
+          "fitSize": "1599x1000",
+          "padding": {"left": 0, "top": 0, "right": 1, "bottom": 0, "color": "#F7F7F5"},
+          "rmseAgainstDeterministicFit": 0
+        },
+        "findings": [
+          "历史选中态、脱敏 D20 与扑克摘要、分享前预览、默认关闭私人字段、复制文本回退和无公开链接正确",
+          "设置覆盖主题、动画、减少动态、振动、保存历史、随机过程、内容许可、Android/Web no-op 与静态导航不振动"
+        ],
+        "acceptanceIssues": [
+          "筛选列使用骰子、扑克牌、硬币、数字生成器、自定义列表，遗漏塔罗和六爻起卦并引入未在五工具 IA 中的数字生成器／自定义列表；必须改为五个首发工具筛选"
+        ],
+        "revisionRequirements": [
+          "筛选器固定且仅显示塔罗、六爻起卦、D20 检定、硬币、扑克牌五项",
+          "本地历史列表中的工具标签只能来自同一五工具集合",
+          "禁止数字生成器、自定义列表及其他未上线工具出现在筛选、历史、空状态、计数、菜单或插图中",
+          "保留本地历史、脱敏分享预览、默认隐藏私人字段、复制文本回退和 Android/Web 设置反馈矩阵"
+        ],
+        "revision2": {
+          "status": "accepted",
+          "reviewStatus": "accepted_tile",
+          "sourcePath": "output/imagegen/round-4/revision-2/web-source/10d-history-share-settings.png",
+          "tilePath": "output/imagegen/round-4/revision-2/web-tiles/10d-history-share-settings.png",
+          "finalPath": "docs/design/mockups/round-4/10d-history-share-settings.png",
+          "observedAt": "2026-08-23",
+          "reviewedAt": "2026-08-23",
+          "copiedToFinal": true,
+          "runtimeAsset": false,
+          "source": {
+            "size": "1586x992",
+            "opaque": true,
+            "sha256": "b06dd5aa8619de9bdfe3bdba307f2a4878f460c99682b95b28f7e610161f07d7"
+          },
+          "tile": {
+            "size": "1600x1000",
+            "opaque": true,
+            "sha256": "c44fae16e8d7f578e81757f11d72221ca68f5726da05da4b310cbd2d24544718",
+            "method": "aspect-fit-whole-source-with-padding",
+            "fitSize": "1599x1000",
+            "padding": {
+              "left": 0,
+              "top": 0,
+              "right": 1,
+              "bottom": 0,
+              "color": "#F7F7F5"
+            },
+            "rmseAgainstDeterministicFit": 0
+          },
+          "findings": [
+            "筛选器恰好显示塔罗、六爻起卦、D20 检定、硬币、扑克牌五项；历史列表只使用同一集合中的扑克牌与 D20 检定",
+            "分享前预览的问题、备注和精确时间默认关闭，预览只含脱敏扑克结果与规则版本",
+            "复制文本为主回退，明确不会生成或分享公开链接",
+            "动画、减少动态效果与振动可独立控制；Android 阶段性反馈、Web 能力授权与 no-op、静态导航不强制震动均可见"
+          ]
+        }
+      }
+    ],
+    "assembledPath": "output/imagegen/round-4/revision-2/web/10-responsive-expanded-assembled.png",
+    "assembledFinalPath": "docs/design/mockups/round-4/10-responsive-expanded-assembled.png",
+    "assembledStatus": "accepted",
+    "assembledReviewStatus": "accepted",
+    "assembledPreviousRevision": {
+      "path": "output/imagegen/round-4/web/10-responsive-expanded-assembled.png",
+      "status": "needs_revision",
+      "reviewStatus": "needs_revision_due_to_10c_10d",
+      "size": "3840x2160",
+      "opaque": true,
+      "sha256": "fd2c38aaeb98e689dd7dee5845a2734ecb9ae6b9462e55510e392c7190c1af40",
+      "method": "deterministic-four-tile-composite",
+      "background": "#F7F7F5",
+      "rmseAgainstDeterministicAssembly": 0,
+      "acceptanceIssues": [
+        "10c 的可发布许可声明与 10d 的旧范围筛选器仍存在；只需返工对应两个 tile 并按既定坐标重新组装，10a/10b 不要求重生成"
+      ]
+    },
+    "assembled": {
+      "size": "3840x2160",
+      "opaque": true,
+      "sha256": "749b1017a21e244538091b3cc7780c32b357562d1289475ef48aab932da0549e",
+      "method": "deterministic-four-tile-composite",
+      "background": "#F7F7F5",
+      "rmseAgainstDeterministicAssembly": 0,
+      "active": true,
+      "copiedToFinal": true,
+      "sourceTiles": [
+        {
+          "id": "10a-five-tools-home",
+          "sha256": "f173451a1e64140753aa12ae08938942ef0fd0ae7c779443d29315009858ac8b"
+        },
+        {
+          "id": "10b-poker-config-result",
+          "sha256": "3b8d2e684365d1438aa78e205f2556ad7c3f696617e127cb30aabbb239d150f7"
+        },
+        {
+          "id": "10c-tarot-liuyao-explanations",
+          "sha256": "3f212800de97cb371780e0f7ae33352088b4ba0793f9903b499f8ae3fa32ed51"
+        },
+        {
+          "id": "10d-history-share-settings",
+          "sha256": "c44fae16e8d7f578e81757f11d72221ca68f5726da05da4b310cbd2d24544718"
+        }
+      ],
+      "findings": [
+        "四个 1600x1000 tile 按既定坐标完整组装，横间隔 320 px、纵间隔 80 px、外边距与背景一致",
+        "复用原 accepted 10a/10b，并使用 revision-2 accepted 10c/10d；无裁切、拉伸、错位或不可读区域"
+      ]
+    },
+    "copiedToFinal": true,
+    "runtimeAsset": false
+  },
+  "assets": [
+    {
+      "id": "01-mobile-core-experience",
+      "promptPath": "docs/design/gpt-image-2-prompts/01-mobile-core-experience.txt",
+      "sourcePath": "output/imagegen/source/01-mobile-core-experience.png",
+      "archiveCandidatePath": "output/imagegen/01-mobile-core-experience.png",
+      "finalPath": "docs/design/mockups/01-mobile-core-experience.png",
+      "auditPath": "docs/design/mockups/audit-only/01-mobile-core-experience.png",
+      "status": "superseded",
+      "reviewStatus": "accepted_round2_scope_superseded",
+      "active": false,
+      "copiedToFinal": false,
+      "supersededBy": "round4/01-mobile-poker-core",
+      "currentDisposition": "四工具首页不再是完整首页基线；D20 配置与结果仅保留 audit-only 价值",
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 2,
+      "round2": {
+        "status": "accepted",
+        "reviewStatus": "accepted",
+        "sourcePath": "output/imagegen/round-2/source/01-mobile-core-experience.png",
+        "archiveCandidatePath": "output/imagegen/round-2/01-mobile-core-experience.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "ec1739c521baa1ef00473d31b6d24dd88aff793e20e9634e8103fe67e66a85ca"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "d4847939824ac086dff7be937d705f304022e6398f8fb5da8a7f6f0e3a4f96c0"
+        },
+        "copiedToFinal": true,
+        "findings": [
+          "首页只选中首页，D20 配置和结果只选中工具",
+          "FR-047 配置、原始骰序、保留舍弃、公式、总值和 DC 完全一致",
+          "没有状态栏、设备硬件、熟练加值、额外骰或禁止资产"
+        ]
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "37e0f8b68b429211282211b286860820f42dbba549b9a73d25b553253283bb44"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "bc4772bee038aba30837dd159b1c215eecca1a64acaac3dd03b0523b8caba1c6"
+      },
+      "acceptanceIssues": [
+        "D20 配置页和结果页错误选中底栏首页，工具路由应选中工具"
+      ],
+      "revision2Fixes": [
+        "首页 frame 只选中首页，D20 配置和结果 frame 只选中工具",
+        "D20 配置、原始骰序、保留舍弃、公式、总值和 DC 使用唯一冻结数据"
+      ],
+      "requirements": [
+        "FR-001",
+        "FR-002",
+        "FR-005",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-024",
+        "FR-025",
+        "FR-047",
+        "NFR-007",
+        "NFR-008",
+        "REL-002"
+      ]
+    },
+    {
+      "id": "02-motion-tarot",
+      "promptPath": "docs/design/gpt-image-2-prompts/02-motion-tarot.txt",
+      "sourcePath": "output/imagegen/source/02-motion-tarot.png",
+      "archiveCandidatePath": "output/imagegen/02-motion-tarot.png",
+      "finalPath": "docs/design/mockups/02-motion-tarot.png",
+      "status": "accepted",
+      "reviewStatus": "accepted_round3_scoped",
+      "active": true,
+      "copiedToFinal": true,
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 3,
+      "round2": {
+        "status": "needs_revision",
+        "reviewStatus": "needs_revision",
+        "sourcePath": "output/imagegen/round-2/source/02-motion-tarot.png",
+        "archiveCandidatePath": "output/imagegen/round-2/02-motion-tarot.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "a1c84e267d16648c1df7c4c4775755a30ebf54a1f12ff371f5632e87831a0254"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "d53c3788d62e8357c8ed6cf20d9ae83151f2c0254aa3fc3bd78e9160fe49e6ea"
+        },
+        "copiedToFinal": false,
+        "findings": [
+          "抽取三张牌、五态、逆位开启、无来源数字和抽象牌面均已修正",
+          "五个完整移动 frame 错误使用抽牌、记录、设置三项底栏，违反全局四项移动导航",
+          "完成态未显示提示词要求的每张简短关键词行"
+        ],
+        "round3Recommendation": "保留当前五态与抽象牌面，只把五个 frame 的底栏统一改为首页、工具、历史、设置并仅选中工具；完成和减少动态态为过去、现在、未来三张牌各补一行简短抽象关键词。"
+      },
+      "round3": {
+        "status": "accepted",
+        "reviewStatus": "accepted_scoped",
+        "promptPath": "docs/design/gpt-image-2-prompts/02-motion-tarot.txt",
+        "sourcePath": "output/imagegen/round-3/source/02-motion-tarot.png",
+        "archiveCandidatePath": "output/imagegen/round-3/02-motion-tarot.png",
+        "finalPath": "docs/design/mockups/02-motion-tarot.png",
+        "generatedAt": null,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "copiedToFinal": true,
+        "runtimeAsset": false,
+        "scope": "四项移动底栏、工具选中态、固定原创关键词澄见／转隙／落定；保留五态、抽取三张牌、无来源数字禁项和抽象牌面",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "95b3dd8a21b05f9b09701ff209dfee1047365366cef37348d6952084234b00ff"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "e00af6e88a982d7c432abaddd6fddc2756df4b213fd4a519310640863a4e5734"
+        },
+        "findings": [
+          "五个完整 frame 均为首页、工具、历史、设置且只选中工具",
+          "完成与减少动态态三张牌均显示澄见、转隙、落定关键词",
+          "抽取三张牌、五态时长、无来源数字禁项和抽象牌面均正确"
+        ]
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "c6c8a5ea906bced9e3e4a9d889db16c569bf87600f6ab957dce962e3495b6569"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "b40b5807a75edc28298f13bcd62a5ef5652ce2b84eccb8bc537d0035d4c3a972"
+      },
+      "acceptanceIssues": [
+        "三牌主按钮误写为生成结果，应为抽取三张牌",
+        "按压和生成态出现无规则来源的数字 36"
+      ],
+      "revision2Fixes": [
+        "三牌按压态主动作固定为抽取三张牌",
+        "五态保持三牌、过去现在未来和逆位开启不变",
+        "除五个 timing 外禁止牌库数、剩余数和无来源数字"
+      ],
+      "requirements": [
+        "FR-004",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-041",
+        "NFR-006",
+        "NFR-007",
+        "NFR-016",
+        "REL-002"
+      ]
+    },
+    {
+      "id": "03-motion-liuyao",
+      "promptPath": "docs/design/gpt-image-2-prompts/03-motion-liuyao.txt",
+      "sourcePath": "output/imagegen/source/03-motion-liuyao.png",
+      "archiveCandidatePath": "output/imagegen/03-motion-liuyao.png",
+      "finalPath": "docs/design/mockups/03-motion-liuyao.png",
+      "status": "accepted",
+      "reviewStatus": "accepted_round3_scoped",
+      "active": true,
+      "copiedToFinal": true,
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 3,
+      "round2": {
+        "status": "needs_revision",
+        "reviewStatus": "needs_revision",
+        "sourcePath": "output/imagegen/round-2/source/03-motion-liuyao.png",
+        "archiveCandidatePath": "output/imagegen/round-2/03-motion-liuyao.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "4fc5c832f51085e406811675ec4593c910ba9e2ffc11740ad502fe21b7f2ec5d"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "f30731e26cd764329c889860acf00c524beec52c45fefd60650a10ee1ee378ba"
+        },
+        "copiedToFinal": false,
+        "findings": [
+          "前两爻实线阳静爻、第三爻断线阴少阴静爻、和值 8 和自下而上顺序已修正",
+          "生成态三枚圆片已使用与最终正反正相同的分色朝向，提前泄露第三爻结果",
+          "页面标题误生成为刘耀而非六爻，且完整移动 frame 缺少全局四项底栏"
+        ],
+        "round3Recommendation": "保留当前爻线和完成结果；标题逐字固定为六爻，五个 frame 增加首页、工具、历史、设置底栏并仅选中工具；生成态三枚占位必须使用完全相同的中性纯色，不能出现最终朝向、分色或正反标签。"
+      },
+      "round3": {
+        "status": "accepted",
+        "reviewStatus": "accepted_scoped",
+        "promptPath": "docs/design/gpt-image-2-prompts/03-motion-liuyao.txt",
+        "sourcePath": "output/imagegen/round-3/source/03-motion-liuyao.png",
+        "archiveCandidatePath": "output/imagegen/round-3/03-motion-liuyao.png",
+        "finalPath": "docs/design/mockups/03-motion-liuyao.png",
+        "generatedAt": null,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "copiedToFinal": true,
+        "runtimeAsset": false,
+        "scope": "标题固定六爻起卦、四项移动底栏且工具选中、按压和生成态第三爻中性同色同形空占位、揭示后正／反／正与 3+2+3=8 的少阴阴静爻",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "b4def4bdcd6e1562b1d8934aff10294d8edfb24bb83637390f6778d0866b5af0"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "589ba68b9e165d34f5b9e104a165fd0d0fcc9304e47d0d20c6803ae3744e6f06"
+        },
+        "findings": [
+          "五个完整 frame 标题均为六爻起卦，四项底栏只选中工具",
+          "按压和生成态第三爻槽为同色同形的中性空占位，没有线型或正反预测",
+          "揭示后正、反、正等于 3+2+3=8，少阴、阴静爻、断线与自下而上顺序一致"
+        ]
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "f0e19ee09a59be3becdcda317d5bca2628363da8079494650ed9f52e01409efa"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "fee40a6e479b5d08757bcdf5fe0c4a0571822409d5a84ef89cf5db2f2a3746b0"
+      },
+      "acceptanceIssues": [
+        "已完成的前两爻画为实线却标注阴静爻，图形与文字规则冲突",
+        "按压第 3 爻时已提前显示第三条断线，违反先生成后揭示"
+      ],
+      "revision2Fixes": [
+        "初爻和二爻固定为实线阳静爻并按从下到上排列",
+        "按压和生成态第三爻位置为空且不泄露线型或标签",
+        "揭示后第三爻固定为断线阴少阴静爻，和值 8 且图文一致"
+      ],
+      "requirements": [
+        "FR-004",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-019",
+        "FR-041",
+        "NFR-006",
+        "NFR-007",
+        "NFR-016",
+        "REL-002"
+      ]
+    },
+    {
+      "id": "04-motion-dice",
+      "promptPath": "docs/design/gpt-image-2-prompts/04-motion-dice.txt",
+      "sourcePath": "output/imagegen/source/04-motion-dice.png",
+      "archiveCandidatePath": "output/imagegen/04-motion-dice.png",
+      "finalPath": "docs/design/mockups/04-motion-dice.png",
+      "status": "accepted",
+      "reviewStatus": "accepted_round2",
+      "active": true,
+      "copiedToFinal": true,
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 2,
+      "round2": {
+        "status": "accepted",
+        "reviewStatus": "accepted",
+        "sourcePath": "output/imagegen/round-2/source/04-motion-dice.png",
+        "archiveCandidatePath": "output/imagegen/round-2/04-motion-dice.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "193052b9a59de1683e54a7fe58aec03e5cee83d53ad3881157e31428fda929e1"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "8f573ff6783cfb31401649e6d00cf3a7e812996983286e25b7e5106099ec33e1"
+        },
+        "copiedToFinal": true,
+        "findings": [
+          "五个 frame 均为四项底栏且仅选中工具，完成和减少动态主动作均为再来一次",
+          "4D20 原序 8、16、4、12，只舍弃第 3 枚，公式、总值 41 和 DC 35 完全一致",
+          "跳过动画仅在揭示态可交互，画板下方跳过、中断、恢复为 app frame 外的非交互规格注释"
+        ]
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "241d8c6c7bd195785c0f099a35e0a851b5a8c926553b8dd7db6fcd5c947cc3c3"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "d3e4e0bade8199ee2dc02d4bfe3f9fb58ead7c5c85a224eb6f3d0193035d816c"
+      },
+      "acceptanceIssues": [
+        "完成态和减少动态态仍使用掷骰，应改为再来一次",
+        "移动端使用汉堡菜单且缺少规定底栏，导航结构错误",
+        "五态均展示跳过揭示、中断、继续调试控制，形成未定义产品操作"
+      ],
+      "revision2Fixes": [
+        "五态底栏只选中工具且禁止汉堡导航",
+        "完成和减少动态主动作固定为再来一次",
+        "跳过动画只可出现在揭示态，禁止常驻跳过揭示、中断、继续调试控制",
+        "4D20 原序 8、16、4、12，舍弃第 3 枚，总值 41，DC 35 完全冻结"
+      ],
+      "requirements": [
+        "FR-004",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-024",
+        "FR-025",
+        "FR-041",
+        "FR-047",
+        "NFR-001",
+        "NFR-006",
+        "NFR-007",
+        "NFR-016",
+        "NFR-017",
+        "REL-002"
+      ]
+    },
+    {
+      "id": "05-motion-coin",
+      "promptPath": "docs/design/gpt-image-2-prompts/05-motion-coin.txt",
+      "sourcePath": "output/imagegen/source/05-motion-coin.png",
+      "archiveCandidatePath": "output/imagegen/05-motion-coin.png",
+      "finalPath": "docs/design/mockups/05-motion-coin.png",
+      "status": "accepted",
+      "reviewStatus": "accepted_round3_scoped",
+      "active": true,
+      "copiedToFinal": true,
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 3,
+      "round2": {
+        "status": "needs_revision",
+        "reviewStatus": "needs_revision",
+        "sourcePath": "output/imagegen/round-2/source/05-motion-coin.png",
+        "archiveCandidatePath": "output/imagegen/round-2/05-motion-coin.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "6f4594c4b0be8712e3a28095a55b7d9e0f57b7136add4ae5ecc648d2f7220343"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "54be468405aa1ae7d4c66640b2b3761fdbfab8044bcce29f81e9270f18daa2bb"
+        },
+        "copiedToFinal": false,
+        "findings": [
+          "批量范围 1 至 100、固定十项序列、正反各 5 和各 50% 已逐项一致",
+          "标记为平面抽象双态图形，没有实体货币、金属币堆、面额或赌场语义",
+          "五个完整移动 frame 均缺少全局首页、工具、历史、设置底栏"
+        ],
+        "round3Recommendation": "保留当前范围、十项序列、5 比 5 汇总和抽象标记不变；只为五个 frame 增加首页、工具、历史、设置四项底栏并仅选中工具，正文高度相应重排但不得裁切现有字段。"
+      },
+      "round3": {
+        "status": "accepted",
+        "reviewStatus": "accepted_scoped",
+        "promptPath": "docs/design/gpt-image-2-prompts/05-motion-coin.txt",
+        "sourcePath": "output/imagegen/round-3/source/05-motion-coin.png",
+        "archiveCandidatePath": "output/imagegen/round-3/05-motion-coin.png",
+        "finalPath": "docs/design/mockups/05-motion-coin.png",
+        "generatedAt": null,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "copiedToFinal": true,
+        "runtimeAsset": false,
+        "scope": "保持 1～100、固定十项序列、正反各 5 与各 50%、抽象双态标记不变；补齐四项移动底栏并选中工具",
+        "coverageLimit": "只接受批量序列、导航与五态层级；不证明新增单枚硬币 720ms 抛起／翻转／落定或平台触觉实现",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "1ffa7e07ea284169307ae49965233b9b3b1077d4c59b19ed6cf7a0f5d3bf62cc"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "6cd09ee78ece2cae005bd0a2dc263da79402c2c432576cd3623e084467538502"
+        },
+        "findings": [
+          "五个完整 frame 均有首页、工具、历史、设置且只选中工具",
+          "1～100、固定十项序列、正反各 5、各 50% 与抽象双态标记一致",
+          "五态时长与完成、减少动态数据一致"
+        ]
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "88e3365ad5f8d6dc430f9dbe8e4fa7df19eb509fbddc35da28b5e6ef76a77b17"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "acc9aeda35a976dca785fcf4298878999477c82ece46b93a87023c6bfc1b48ab"
+      },
+      "acceptanceIssues": [
+        "批量范围误写为 1 至 1000 次，FR-028 要求 1 至 100 次",
+        "十次序列实际为正面 5、反面 5，却汇总为正面 6、反面 4",
+        "生成态使用近似实体金属币堆，不符合抽象双面标记和禁止真实货币的资产边界"
+      ],
+      "revision2Fixes": [
+        "批量范围固定为 1 至 100",
+        "十次序列固定为正正反正正反反正反反，汇总固定为正面 5、反面 5 和各 50%",
+        "使用无厚度无金属材质的抽象双态标记，禁止币堆、面额和赌场语义"
+      ],
+      "requirements": [
+        "FR-004",
+        "FR-027",
+        "FR-028",
+        "FR-029",
+        "FR-041",
+        "NFR-006",
+        "NFR-007",
+        "NFR-016",
+        "REL-002"
+      ]
+    },
+    {
+      "id": "06-responsive-web",
+      "promptPath": "docs/design/gpt-image-2-prompts/06-responsive-web.txt",
+      "sourcePath": "output/imagegen/source/06-responsive-web.png",
+      "archiveCandidatePath": "output/imagegen/06-responsive-web.png",
+      "finalPath": "docs/design/mockups/06-responsive-web.png",
+      "status": "scope-invalidated/audit-only",
+      "reviewStatus": "scope-invalidated",
+      "active": false,
+      "copiedToFinal": false,
+      "runtimeAsset": false,
+      "licenseStatus": "内部设计参考，待 PM 最终 G1 许可结论",
+      "generatedAt": "2026-08-23",
+      "promptRevision": 3,
+      "round2": {
+        "status": "needs_revision",
+        "reviewStatus": "needs_revision",
+        "sourcePath": "output/imagegen/round-2/source/06-responsive-web.png",
+        "archiveCandidatePath": "output/imagegen/round-2/06-responsive-web.png",
+        "generatedAt": null,
+        "reviewedAt": "2026-08-23",
+        "source": {
+          "size": "1672x941",
+          "opaque": true,
+          "sha256": "c7de5afd60accb8983781493f7fe1835f8dd474c749eff71f82daefd0a0ae2ed"
+        },
+        "archiveCandidate": {
+          "size": "3840x2160",
+          "opaque": true,
+          "sha256": "47f0f32b37655b72d31b0d7ef3b718993f64f98c48f8cb55acee178fe7a5b121"
+        },
+        "copiedToFinal": false,
+        "findings": [
+          "首页、D20 配置和结果、历史与分享层级清楚，D20 冻结数值一致且无禁止资产",
+          "四个可见子 frame 约为 805x443、1.82 比 1，仍不是各自独立 16 比 10",
+          "未采用指定 1600x1000 子画板边界，比例门禁未通过"
+        ],
+        "round3Recommendation": "不要再次依赖单次模型输出同时保证四个精确外框；先分别生成四张独立 1440x900 页面，再用确定性后处理统一缩放到 1600x1000，并按 x=288/1952、y=48/1112 组装到 3840x2160 画布，禁止非均匀缩放和额外内框。"
+      },
+      "round3": {
+        "status": "scope-invalidated/audit-only",
+        "reviewStatus": "scope-invalidated",
+        "promptPaths": [
+          "docs/design/gpt-image-2-prompts/round-3-web/06a-home.txt",
+          "docs/design/gpt-image-2-prompts/round-3-web/06b-d20-config.txt",
+          "docs/design/gpt-image-2-prompts/round-3-web/06c-d20-result.txt",
+          "docs/design/gpt-image-2-prompts/round-3-web/06d-history-share.txt"
+        ],
+        "plannedSourcePaths": [
+          "output/imagegen/round-3/web/source/06a-home.png",
+          "output/imagegen/round-3/web/source/06b-d20-config.png",
+          "output/imagegen/round-3/web/source/06c-d20-result.png",
+          "output/imagegen/round-3/web/source/06d-history-share.png"
+        ],
+        "observedSources": [
+          {
+            "id": "06a-home",
+            "path": "output/imagegen/round-3/web-source/06a-home.png",
+            "size": "1568x1003",
+            "opaque": true,
+            "sha256": "6678c75c0c135baa825a06a700e47fd7d0002b97beff5c262744e2299b5d4413"
+          },
+          {
+            "id": "06b-d20-config",
+            "path": "output/imagegen/round-3/web-source/06b-d20-config.png",
+            "size": "1586x992",
+            "opaque": true,
+            "sha256": "b9ebc31c241e79f216072d6d24912d9681aa569ba2763ab2c1d81f93c2cd942d"
+          }
+        ],
+        "assembledPath": "output/imagegen/round-3/web/06-responsive-web-assembled.png",
+        "sourceSize": "1672x941",
+        "safeFrame": "83,0,1506,941",
+        "tileSize": "1600x1000",
+        "assembly": {
+          "canvas": "3840x2160",
+          "horizontalGap": 320,
+          "verticalGap": 80,
+          "coordinates": [
+            "160,40",
+            "2080,40",
+            "160,1120",
+            "2080,1120"
+          ]
+        },
+        "generatedAt": null,
+        "observedAt": "2026-08-23",
+        "reviewedAt": "2026-08-23",
+        "copiedToFinal": false,
+        "runtimeAsset": false,
+        "assembled": false,
+        "scope": "四份独立首页、D20 配置、D20 结果、历史＋分享预览源图；中央安全框裁剪、1600x1000 重采样和确定性 2x2 组装",
+        "invalidationReason": "仅 06a/06b 存在；实际尺寸不符合 planned sourceSize，且页面属于五工具／扑克扩展前范围；不得裁剪、补图或组装"
+      },
+      "source": {
+        "size": "1672x941",
+        "opaque": true,
+        "sha256": "43ef6be298646e85c047cc43871b8876f01ec87fbda4fca312d9d8a14a89cd7a"
+      },
+      "archiveCandidate": {
+        "size": "3840x2160",
+        "opaque": true,
+        "sha256": "1c4dfde500a6fc2b0afcfdf49250623f53e5d0a26fb1756c7ad0382c006b453a"
+      },
+      "acceptanceIssues": [
+        "四个子 frame 约为 1.85 比 1，未保持独立 1440x900 的 16 比 10 比例"
+      ],
+      "revision2Fixes": [
+        "四个子 frame 各自固定为 1600x1000 且严格 16 比 10",
+        "使用精确 2x2 坐标和统一 10/9 缩放表达 1440x900",
+        "禁止 16 比 9、1.85 比 1、非均匀缩放和子画板内嵌不同比例 frame"
+      ],
+      "requirements": [
+        "FR-001",
+        "FR-002",
+        "FR-005",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-025",
+        "FR-031",
+        "FR-032",
+        "FR-033",
+        "FR-037",
+        "FR-038",
+        "FR-039",
+        "FR-047",
+        "NFR-007",
+        "NFR-008",
+        "NFR-009",
+        "REL-002"
+      ]
+    }
+  ]
+}

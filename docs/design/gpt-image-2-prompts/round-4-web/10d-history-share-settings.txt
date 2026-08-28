@@ -1,0 +1,15 @@
+Use case: ui-mockup
+Asset type: independent expanded round-4 16:10 desktop history, share-preview, and settings page
+Primary request: Create one complete Pocketools desktop page in a single 16:10 composition showing local history, an opaque share-preview layer, and feedback/privacy settings. Preserve a clear application-layer relationship; this is not a dashboard collage.
+
+Source-size honesty: The platform source dimensions may vary. Do not claim native 1600 x 1000, 4K, or fixed source pixels. Keep the full interface, modal, shadows, and controls inside generous pure-background safety so the whole source can later be aspect-fit and padded to 1600 x 1000 without losing content.
+
+Shell and history, exact five-tool gate: Left navigation exact order "首页", "工具", "历史", "设置", with "历史" selected beneath the modal context. Use a 280 px-equivalent filter column with exactly these five filters and no others: "塔罗", "六爻起卦", "D20 检定", "硬币", "扑克牌". Every tool label visible in the local history list must also be one of those exact five labels. Fixed non-private rows: "D20 检定 · 自定义 · 总值 41 · 达到 DC 35 · 最近" and "扑克牌 · 不含大小王 · 3 张 · 剩余 49 张 · 更早". Do not show "数字生成器", "自定义列表", or any other unlaunched tool in the filter column, history list, empty state, count, chip, menu, or illustration. Never show questions, notes, exact time, local ID, device, account, or analytics.
+
+Share preview: Open an opaque raised layer titled "分享前预览" over the selected poker result. Default-off options are "问题", "备注", "精确时间". Final preview contains only "抽扑克牌", "标准牌组 · 不含大小王 · 抽取 3 张 · 无放回", "#1 黑桃 A · #2 红桃 10 · #3 梅花 K", "剩余 49 张", and a short rule version. "复制文本" is the safe primary fallback; do not claim a public URL.
+
+Settings region or side sheet: Show "主题", "动画", "减少动态效果", "振动", "保存历史", "随机过程说明", and "内容许可与归属". Make vibration disableable. Add a compact platform note: "Android：阶段性克制反馈" and "Web：能力／授权允许时使用；不支持则 no-op". State "静态导航不强制震动" and show reduced motion as independent from vibration.
+
+Accessibility: Visible modal focus containment, close returns focus, 48 px-equivalent controls, state not color-only, keyboard-readable order, large-text reflow, and persistent privacy summary "问题、备注和精确时间默认隐藏。"
+
+Prohibit: public-link claim, private data, account/avatar, cloud sync, analytics, casino/chip/wager/cash, branded cards, realistic currency, transparent modal, glass, clipped settings, tiny text, watermark, trademark, or prior-image reference.

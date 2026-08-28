@@ -1,0 +1,15 @@
+Use case: ui-mockup
+Asset type: independent expanded round-4 16:10 desktop explanation page
+Primary request: Create one complete Pocketools desktop explanation page in a single 16:10 composition, with tarot explanation on the left and Liuyao structural explanation on the right. This is a readable product content page, not occult concept art.
+
+Source-size honesty: Source raster dimensions may vary. Do not claim native 1600 x 1000, 4K, or fixed source pixels. Keep the full 16:10 interface and every shadow/content region inside generous pure-background safety so later aspect-fit plus padding to 1600 x 1000 loses nothing.
+
+Shell: Desktop left navigation "首页", "工具", "历史", "设置" selecting only "工具". Use restrained neutral surfaces, clear content hierarchy, readable source statuses, keyboard focus, and 200% text-ready sections.
+
+Tarot area: Use original abstract cards only. Show "过去 · 澄见", "现在 · 转隙", "未来 · 落定" in order. Selected card explanation contains "关键词", "传统象征", "正位／逆位差异", "当前位置解释", "反思问题", and "组合提示". Combination text describes possible relationships, never certainty. Keep disclaimer "内容用于娱乐、文化学习和自我反思，不是专业建议。"
+
+Liuyao area: Show structured example "本卦：比（第 8 卦）", "上卦：坎", "下卦：坤", "三爻动：阴→阳", "变卦：蒙（第 4 卦）" with matching line diagrams. Sections "卦象基础", "动爻与变卦", "传统原文", "现代改写", "原创简释" are separate and each has source/license status. State "不扩展到纳甲、六亲、世应、用神或自动断卦".
+
+Source-status and license gate, mandatory visible text: For every visible source status in both the tarot and Liuyao areas, the only allowed status is "内部设计参考 · 待 PM 最终许可复核 · 复核前不发布". Show a persistent page-level line "runtimeAsset=false · 复核前不进入发布内容包". "传统原文", "现代改写", and "原创简释" all follow this same boundary; original authorship does not create automatic release permission. Use short placeholders instead of a copied long traditional or modern text. Never render any source as approved for release, already licensed, already included in a content package, publishable, or entering a release package. Preserve the cultural-entertainment and high-risk disclaimers; do not upload or interpret private user text.
+
+Prohibit: Rider-Waite-like scene, copied book page, long quote, source-less translation, invented permission, mystical wallpaper, antique scroll, fortune certainty, fear, paid remedy, professional advice, Na Jia expansion, casino, watermark, trademark, clipped source text, or prior-image reference.

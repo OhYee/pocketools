@@ -1,0 +1,19 @@
+Use case: ui-mockup
+Asset type: expanded round-4 high-fidelity mobile product board
+Primary request: Create one polished Pocketools v0.1.0 mobile UI board with three complete portrait app frames: the five-tool home, playing-card configuration, and the immutable playing-card result. This is implementation-oriented product UI, not concept art.
+
+Output honesty and framing: Use the platform's available landscape raster and highest requested quality. Do not claim native 4K or a guaranteed source pixel size. Arrange three equal complete 360:800 app viewports in one row with full borders, no crop, no OS status bar, no phone hardware, and enough background around every frame for later aspect-fit normalization to a 3840 x 2160 review copy.
+
+Shared shell: Use the exact four-item bottom navigation "首页", "工具", "历史", "设置" in that order. Frame 1 selects only "首页". Frames 2 and 3 select only "工具". Use a restrained light modern-toolbox shell, matte surfaces, crisp system type, 8-point spacing, 48 px-equivalent targets, visible focus, and a small playing-card semantic accent in red, ink, and neutral paper. Do not copy a prior image.
+
+Frame 1, five-tool home: Heading exactly "今天想用哪个工具？". Show five discoverable tool entries in this reading order: "塔罗", "六爻起卦", "D20 检定", "抛硬币", "抽扑克牌". Give each an original abstract line primitive, not five recolored copies. Show a compact local-first status and no account, private question, analytics, cloud-sync claim, marketing hero, unavailable placeholder, casino symbol, or fake user data.
+
+Frame 2, playing-card configuration: Title exactly "抽扑克牌". The switch "包含大小王" is visibly off and annotated "默认关闭". Show the unambiguous deck summary "标准牌组 · 不含大小王 · 52 张". Show an accessible minus/input/plus stepper "抽取数量" set to 3 with range "1～52". Explain "无放回，按顺序展示". Show the frozen preflight summary "52 张 · 抽取 3 张 · 剩余 49 张" and one primary button "洗牌并抽取". Do not show 54 unless the switch is on, and do not show any result card yet.
+
+Frame 3, immutable ordered result: Title exactly "抽取结果" and summary "标准牌组 · 不含大小王 · 抽取 3 张 · 无放回". Show exactly these abstract standard cards in sequence and never reorder them: "#1 黑桃 A", "#2 红桃 10", "#3 梅花 K". Show "已抽取 3 张" and "剩余 49 张". Include actions "重新抽取", "调整配置", "复制文本", "分享"; clarify visually that "重新抽取" starts a new session and does not mutate this result. Card faces use only original or clearly generic abstract suit/rank marks, no detailed court illustration.
+
+Consistency gate: The single immutable record for frames 2 and 3 is includeJokers=false, deckSize=52, drawCount=3, without replacement, ordered card IDs spades.a / hearts.10 / clubs.k, remainingCount=49. Every repeated label, count, order, summary, history/share cue, and navigation state must agree exactly. No duplicate card, 53-card deck, hidden joker, sorted result, continued draw from the old session, or conflicting remaining count.
+
+Accessibility and responsive cues: Keep labels readable, meaning independent of red/black color, each card with text sequence and suit/rank, all targets practical, and structure ready to reflow to one column at 200% text. Show one keyboard focus ring without changing data.
+
+Prohibit: watermark, trademark, branded card back, casino table, poker chip, bet, odds, cash, dealer, win/loss language, realistic currency, third-party art, copyrighted tarot scene, glassmorphism, neon, tiny text, impossible controls, extra navigation, transparent background, or invented rules.
