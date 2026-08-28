@@ -9,7 +9,7 @@ void main() {
     test('bundled content catalogs remain complete and internally valid', () {
       expect(TarotContentCatalog.contentVersion, '1.0.0');
       expect(TarotContentCatalog.validate(), isEmpty);
-      expect(LiuyaoContentCatalog.contentVersion, '1.0.0');
+      expect(LiuyaoContentCatalog.contentVersion, '1.1.0');
       expect(LiuyaoContentCatalog.validate(), isEmpty);
     });
 

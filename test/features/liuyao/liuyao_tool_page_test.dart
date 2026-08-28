@@ -273,6 +273,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byKey(const Key('liuyao-meaning-sheet')), findsOneWidget);
       expect(find.text('卦象释义'), findsOneWidget);
+      expect(find.text('《周易》卦辞原文'), findsWidgets);
+      expect(find.text('常见结构解读'), findsWidgets);
       expect(find.textContaining('数据按初爻到上爻'), findsNothing);
       expect(find.text('来源与许可'), findsNothing);
       expect(find.text('开源许可'), findsNothing);

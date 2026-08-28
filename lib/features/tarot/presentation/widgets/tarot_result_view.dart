@@ -89,6 +89,7 @@ final class TarotResultView extends StatelessWidget {
             delayedReveal: delayedReveal,
             revealOrder: index,
             showDetails: !animate && !delayedReveal,
+            canOpenDetails: revealed && !delayedReveal,
             onTap: onCardTap == null ? null : () => onCardTap!(index),
           );
         })
@@ -150,6 +151,7 @@ final class _TarotOutcomeCard extends StatelessWidget {
     required this.delayedReveal,
     required this.revealOrder,
     required this.showDetails,
+    required this.canOpenDetails,
     this.onTap,
     super.key,
   });
@@ -160,6 +162,7 @@ final class _TarotOutcomeCard extends StatelessWidget {
   final bool delayedReveal;
   final int revealOrder;
   final bool showDetails;
+  final bool canOpenDetails;
   final VoidCallback? onTap;
 
   @override
@@ -170,6 +173,9 @@ final class _TarotOutcomeCard extends StatelessWidget {
               '${interpretation.drawnCard.card.name}，'
               '${tarotOrientationLabel(interpretation.drawnCard.orientation)}，'
               '点击查看释义'
+        : canOpenDetails
+        ? '${tarotPositionLabel(interpretation.drawnCard.position)}位置，'
+              '${interpretation.drawnCard.card.name}正在翻面，点击查看释义'
         : '${tarotPositionLabel(interpretation.drawnCard.position)}位置的塔罗牌正在翻面，'
               '动画完成后可查看释义',
     child: SizedBox(
@@ -182,9 +188,11 @@ final class _TarotOutcomeCard extends StatelessWidget {
               key: Key('tarot-card-action-$interpretationIndex'),
               label: showDetails
                   ? '${interpretation.drawnCard.card.name}，点击查看释义'
+                  : canOpenDetails
+                  ? '${interpretation.drawnCard.card.name}正在翻面，点击查看释义'
                   : '塔罗牌正在翻面，请等待动画完成',
-              hint: showDetails ? '点击查看释义' : '等待动画完成',
-              onTap: showDetails ? onTap : null,
+              hint: canOpenDetails ? '点击查看释义' : '等待动画完成',
+              onTap: canOpenDetails ? onTap : null,
               child: delayedReveal
                   ? _DelayedTarotReveal(
                       drawnCard: interpretation.drawnCard,
@@ -262,12 +270,15 @@ final class TarotInterpretationSheet extends StatelessWidget {
                 children: <Widget>[
                   Text('关键词：${interpretation.keywords.join('、')}'),
                   const SizedBox(height: AppSpacing.lg),
-                  Text('传统象征', style: Theme.of(context).textTheme.titleMedium),
+                  Text(
+                    '传统牌义（Rider–Waite–Smith 体系）',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(interpretation.traditionalSymbols.join('；')),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    useReversals ? '正位／逆位差异' : '方向说明',
+                    useReversals ? '常见解读（正位／逆位）' : '常见解读',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: AppSpacing.xs),

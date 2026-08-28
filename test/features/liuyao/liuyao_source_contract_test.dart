@@ -54,7 +54,7 @@ void main() {
     final source = File(
       'lib/features/liuyao/content/liuyao_content_catalog.dart',
     ).readAsStringSync();
-    expect(source, contains("contentVersion = '1.0.0'"));
+    expect(source, contains("contentVersion = '1.1.0'"));
     expect(source, contains('all 64 hexagrams'));
     expect(source, isNot(contains('Image.asset')));
     expect(source, isNot(contains('http://')));

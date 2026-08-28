@@ -44,8 +44,9 @@ void main() {
     expect(find.byKey(const Key('encyclopedia-tarot-detail')), findsOneWidget);
     expect(find.text('愚者'), findsWidgets);
     expect(find.textContaining('开放'), findsWidgets);
-    expect(find.text('正位释义'), findsOneWidget);
-    expect(find.text('逆位释义'), findsOneWidget);
+    expect(find.text('传统牌义（Rider–Waite–Smith 体系）'), findsOneWidget);
+    expect(find.text('常见正位解读'), findsOneWidget);
+    expect(find.text('常见逆位解读'), findsOneWidget);
 
     Navigator.of(
       tester.element(find.byKey(const Key('encyclopedia-tarot-detail'))),
@@ -76,7 +77,9 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text('卦象释义'), findsOneWidget);
+    expect(find.text('《周易》卦辞原文'), findsOneWidget);
+    expect(find.text('乾：元亨。利貞。'), findsOneWidget);
+    expect(find.text('常见结构解读'), findsOneWidget);
     expect(find.text('观察提示'), findsOneWidget);
   });
 

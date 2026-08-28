@@ -9,6 +9,7 @@ import 'package:pocketools/core/tools/tool_module.dart';
 import 'package:pocketools/core/tools/tool_session_adapter.dart';
 import 'package:pocketools/design_system/app_theme.dart';
 import 'package:pocketools/design_system/components/app_generation_state_view.dart';
+import 'package:pocketools/design_system/components/app_physical_action.dart';
 import 'package:pocketools/features/tarot/domain/tarot_models.dart';
 import 'package:pocketools/features/tarot/presentation/tarot_session_codec.dart';
 import 'package:pocketools/features/tarot/presentation/tarot_session_id_source.dart';
@@ -278,6 +279,49 @@ void main() {
       expect(primitives[1].animate, isTrue);
     },
   );
+
+  testWidgets('the newest appended tarot card opens its interpretation', (
+    tester,
+  ) async {
+    final repository = _RecordingSessionRepository();
+    await _pumpTarotPage(
+      tester,
+      randomSource: _RecordingRandomSource(<int>[...List<int>.filled(160, 0)]),
+      repository: repository,
+      reduceMotion: false,
+      idSource: _SequenceTarotSessionIdSource(<String>[
+        'tarot-meaning-first',
+        'tarot-meaning-second',
+      ]),
+    );
+
+    await tester.tap(find.byKey(const Key('tarot-deck')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.byKey(const Key('tarot-deck')));
+    await tester.tap(find.byKey(const Key('tarot-deck')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 400));
+
+    expect(repository.saved, hasLength(2));
+
+    final newestCard = find.byKey(const Key('tarot-card-action-1'));
+    expect(newestCard, findsOneWidget);
+    expect(tester.widget<AppPhysicalAction>(newestCard).onTap, isNotNull);
+    await tester.ensureVisible(newestCard);
+    await tester.tap(newestCard);
+    await tester.pumpAndSettle();
+
+    expect(
+      find.byKey(const Key('tarot-interpretation-sheet-1')),
+      findsOneWidget,
+    );
+  });
 
   testWidgets(
     'reversals off consumes only shuffle entropy and records upright',

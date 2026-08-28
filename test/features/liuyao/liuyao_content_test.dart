@@ -15,6 +15,7 @@ void main() {
       for (final content in LiuyaoContentCatalog.all) {
         expect(content.title, isNotEmpty);
         expect(content.structureSummary, isNotEmpty);
+        expect(content.classicText, isNotEmpty);
         expect(content.reflectionPrompt, isNotEmpty);
       }
     },

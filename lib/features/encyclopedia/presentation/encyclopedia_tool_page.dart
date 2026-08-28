@@ -385,6 +385,7 @@ final class _EncyclopediaToolPageState extends State<EncyclopediaToolPage> {
       hexagram.lower.name,
       hexagram.lower.symbol,
       content.title,
+      content.classicText,
       content.structureSummary,
       content.reflectionPrompt,
     ].join(' ').toLowerCase();
@@ -620,15 +621,15 @@ final class _TarotMeaningSheet extends StatelessWidget {
                 value: content.reversedKeywords.join(' · '),
               ),
               _EncyclopediaDetailField(
-                label: '传统意象',
+                label: '传统牌义（Rider–Waite–Smith 体系）',
                 value: content.traditionalSymbols.join('；'),
               ),
               _EncyclopediaDetailField(
-                label: '正位释义',
+                label: '常见正位解读',
                 value: content.uprightMeaning,
               ),
               _EncyclopediaDetailField(
-                label: '逆位释义',
+                label: '常见逆位解读',
                 value: content.reversedMeaning,
               ),
               _EncyclopediaBulletField(
@@ -679,7 +680,11 @@ final class _HexagramMeaningSheet extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.xl),
               _EncyclopediaDetailField(
-                label: '卦象释义',
+                label: '《周易》卦辞原文',
+                value: content.classicText,
+              ),
+              _EncyclopediaDetailField(
+                label: '常见结构解读',
                 value: content.structureSummary,
               ),
               _EncyclopediaDetailField(
