@@ -22,6 +22,12 @@ License:
 
 Copyright 2023, the Dart project authors.
 
+The Zhouyi line-text dataset in assets/runtime/liuyao_lines.json is adapted
+from chinese-fortune (https://github.com/ShousenZHANG/chinese-fortune),
+distributed under the MIT License:
+
+Copyright (c) 2026 chinese-fortune contributors
+
 The full dependency licenses remain available through the Flutter-generated
 license registry and the corresponding package LICENSE files. Generated UI
 design references under docs/design are not runtime assets and are not

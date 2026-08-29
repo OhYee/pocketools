@@ -100,6 +100,31 @@ void main() {
     ]);
   });
 
+  testWidgets('three-card stage is visible while each new card is revealing', (
+    tester,
+  ) async {
+    await _pumpTarotPage(
+      tester,
+      randomSource: _RecordingRandomSource(<int>[1, 0, 1, 1]),
+      reduceMotion: false,
+      idSource: _SequenceTarotSessionIdSource(<String>['past', 'present']),
+      initialConfig: const TarotReadingConfig(
+        spread: TarotSpreadPreset.pastPresentFuture,
+      ),
+    );
+
+    await tester.tap(find.byKey(const Key('tarot-deck')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 450));
+    expect(find.textContaining('过去 · 魔术师 · 正位'), findsOneWidget);
+
+    await tester.pump(const Duration(milliseconds: 700));
+    await tester.tap(find.byKey(const Key('tarot-deck')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 450));
+    expect(find.textContaining('现在 · 女祭司 · 逆位'), findsOneWidget);
+  });
+
   testWidgets('tarot deck is disabled throughout the reveal phase', (
     tester,
   ) async {

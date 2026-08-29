@@ -183,6 +183,15 @@ final class _TarotOutcomeCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          Text(
+            '${tarotPositionLabel(interpretation.drawnCard.position)} · '
+            '${interpretation.drawnCard.card.name} · '
+            '${tarotOrientationLabel(interpretation.drawnCard.orientation)}',
+            key: Key('tarot-card-stage-$interpretationIndex'),
+            style: Theme.of(context).textTheme.labelLarge,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppSpacing.sm),
           Center(
             child: AppPhysicalAction(
               key: Key('tarot-card-action-$interpretationIndex'),
@@ -209,13 +218,6 @@ final class _TarotOutcomeCard extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 const SizedBox(height: AppSpacing.sm),
-                Text(
-                  '${tarotPositionLabel(interpretation.drawnCard.position)} · '
-                  '${interpretation.drawnCard.card.name} · '
-                  '${tarotOrientationLabel(interpretation.drawnCard.orientation)}',
-                  style: Theme.of(context).textTheme.labelLarge,
-                  textAlign: TextAlign.center,
-                ),
                 Text(
                   '点击牌面查看释义',
                   textAlign: TextAlign.center,

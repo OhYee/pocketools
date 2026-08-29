@@ -148,7 +148,10 @@ final class _LiuyaoReadingViewState extends State<LiuyaoReadingView> {
       showModalBottomSheet<void>(
         context: context,
         isScrollControlled: true,
-        builder: (context) => _LiuyaoMeaningSheet(explanation: explanation),
+        builder: (context) => _LiuyaoMeaningSheet(
+          explanation: explanation,
+          reading: widget.reading,
+        ),
       ),
     );
   }
@@ -277,9 +280,10 @@ final class _LiuyaoReadingViewState extends State<LiuyaoReadingView> {
 }
 
 final class _LiuyaoMeaningSheet extends StatelessWidget {
-  const _LiuyaoMeaningSheet({required this.explanation});
+  const _LiuyaoMeaningSheet({required this.explanation, required this.reading});
 
   final LiuyaoReadingExplanation explanation;
+  final LiuyaoReading reading;
 
   @override
   Widget build(BuildContext context) => SafeArea(
@@ -309,6 +313,12 @@ final class _LiuyaoMeaningSheet extends StatelessWidget {
             Text('常见结构解读', style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: AppSpacing.xs),
             Text(explanation.primary.structureSummary),
+            const SizedBox(height: AppSpacing.lg),
+            _LiuyaoLineMeanings(
+              title: '本卦六爻原文与常见解读',
+              hexagram: LiuyaoHexagrams.resolve(reading.lines),
+              movingLineIndexes: reading.movingLineIndexes.toSet(),
+            ),
             if (explanation.changed case final changed?) ...<Widget>[
               const SizedBox(height: AppSpacing.lg),
               Text(
@@ -323,6 +333,12 @@ final class _LiuyaoMeaningSheet extends StatelessWidget {
               Text('常见结构解读', style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: AppSpacing.xs),
               Text(changed.structureSummary),
+              const SizedBox(height: AppSpacing.lg),
+              _LiuyaoLineMeanings(
+                title: '变卦六爻原文与常见解读',
+                hexagram: LiuyaoHexagrams.resolve(reading.lines, changed: true),
+                movingLineIndexes: const <int>{},
+              ),
             ],
             const SizedBox(height: AppSpacing.lg),
             Text('动爻关系', style: Theme.of(context).textTheme.titleMedium),
@@ -336,5 +352,54 @@ final class _LiuyaoMeaningSheet extends StatelessWidget {
         ),
       ),
     ),
+  );
+}
+
+final class _LiuyaoLineMeanings extends StatelessWidget {
+  const _LiuyaoLineMeanings({
+    required this.title,
+    required this.hexagram,
+    required this.movingLineIndexes,
+  });
+
+  final String title;
+  final LiuyaoHexagram hexagram;
+  final Set<int> movingLineIndexes;
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<List<LiuyaoLineContent>>(
+    future: LiuyaoContentCatalog.lineContentsFor(hexagram),
+    initialData: LiuyaoContentCatalog.cachedLineContentsFor(hexagram),
+    builder: (context, snapshot) {
+      final lines = snapshot.data;
+      if (snapshot.hasError) {
+        return const Text('爻辞资源暂时无法读取，请稍后重试。');
+      }
+      if (lines == null) {
+        return const Text('正在读取六爻原文…');
+      }
+      return Column(
+        key: Key('liuyao-line-meanings-${hexagram.id}'),
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Text(title, style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: AppSpacing.sm),
+          for (final line in lines) ...<Widget>[
+            Text(
+              '${line.title}${movingLineIndexes.contains(line.position - 1) ? ' · 动爻' : ''}',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            Text('《周易》爻辞原文：${line.classicText}'),
+            const SizedBox(height: AppSpacing.xs),
+            Text(
+              '常见解读：${LiuyaoContentCatalog.commonLineInterpretation(content: line, moving: movingLineIndexes.contains(line.position - 1))}',
+            ),
+            if (line.position != LiuyaoReading.lineCapacity)
+              const Divider(height: AppSpacing.xl),
+          ],
+        ],
+      );
+    },
   );
 }

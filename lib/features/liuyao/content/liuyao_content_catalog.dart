@@ -1,5 +1,27 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+
 import '../domain/liuyao_hexagrams.dart';
 import '../domain/liuyao_models.dart';
+
+final class LiuyaoLineContent {
+  const LiuyaoLineContent({
+    required this.position,
+    required this.type,
+    required this.classicText,
+  });
+
+  final int position;
+  final String type;
+  final String classicText;
+
+  String get title => switch (position) {
+    1 => '初$type',
+    6 => '上$type',
+    _ => '$type${<String>['', '一', '二', '三', '四', '五', '六'][position]}',
+  };
+}
 
 final class LiuyaoHexagramContent {
   const LiuyaoHexagramContent({
@@ -31,11 +53,16 @@ final class LiuyaoReadingExplanation {
   final LiuyaoHexagramContent? changed;
 }
 
-/// Public-domain Zhouyi hexagram judgments plus Pocketools-authored structural
-/// prompts. No classic line text or third-party modern interpretation is
-/// embedded in this package.
+/// Public-domain Zhouyi judgments and line texts plus app-authored structural
+/// prompts. The bundled line-text dataset is loaded on demand so opening a
+/// tool does not delay application startup.
 abstract final class LiuyaoContentCatalog {
-  static const contentVersion = '1.1.0';
+  static const contentVersion = '1.2.0';
+  static const lineTextAsset = 'assets/runtime/liuyao_lines.json';
+  static final Map<int, Future<List<LiuyaoLineContent>>> _lineContentCache =
+      <int, Future<List<LiuyaoLineContent>>>{};
+  static final Map<int, List<LiuyaoLineContent>> _loadedLineContents =
+      <int, List<LiuyaoLineContent>>{};
 
   static final List<LiuyaoHexagramContent> all = List.unmodifiable(
     LiuyaoHexagrams.all.map(_buildContent),
@@ -66,6 +93,71 @@ abstract final class LiuyaoContentCatalog {
       }
     }
     return List<String>.unmodifiable(errors);
+  }
+
+  static Future<List<LiuyaoLineContent>> lineContentsFor(
+    LiuyaoHexagram hexagram, {
+    AssetBundle? bundle,
+  }) {
+    if (bundle != null) return _loadLineContents(hexagram, bundle);
+    return _lineContentCache.putIfAbsent(
+      hexagram.kingWenNumber,
+      () => _loadLineContents(hexagram, rootBundle),
+    );
+  }
+
+  static List<LiuyaoLineContent>? cachedLineContentsFor(
+    LiuyaoHexagram hexagram,
+  ) => _loadedLineContents[hexagram.kingWenNumber];
+
+  static Future<List<LiuyaoLineContent>> _loadLineContents(
+    LiuyaoHexagram hexagram,
+    AssetBundle bundle,
+  ) async {
+    final encoded = await bundle.loadString(lineTextAsset);
+    final decoded = jsonDecode(encoded) as Map<String, Object?>;
+    final hexagrams = decoded['hexagrams'] as List<Object?>;
+    final rawHexagram = hexagrams.cast<Map<String, Object?>>().firstWhere(
+      (entry) => entry['number'] == hexagram.kingWenNumber,
+    );
+    final lines = (rawHexagram['lines'] as List<Object?>)
+        .cast<Map<String, Object?>>()
+        .map(
+          (line) => LiuyaoLineContent(
+            position: line['position'] as int,
+            type: line['type'] as String,
+            classicText: line['text'] as String,
+          ),
+        )
+        .toList(growable: false);
+    if (lines.length != LiuyaoReading.lineCapacity) {
+      throw const FormatException('A hexagram must contain six line texts.');
+    }
+    final immutable = List<LiuyaoLineContent>.unmodifiable(lines);
+    _loadedLineContents[hexagram.kingWenNumber] = immutable;
+    return immutable;
+  }
+
+  static String commonLineInterpretation({
+    required LiuyaoLineContent content,
+    required bool moving,
+  }) {
+    final stage = switch (content.position) {
+      1 => '事情刚开始，常见解读侧重打基础、观察时机',
+      2 => '事情进入发展初段，常见解读侧重回应关系与稳步推进',
+      3 => '处在下卦末端，常见解读侧重转折前的风险与取舍',
+      4 => '进入上卦开端，常见解读侧重适应新环境与谨慎行动',
+      5 => '接近核心位置，常见解读侧重承担责任与发挥影响力',
+      6 => '事情发展到阶段末端，常见解读侧重收束、反省与避免过度',
+      _ => throw RangeError.range(content.position, 1, 6, 'position'),
+    };
+    final nature = content.type == '九'
+        ? '阳爻通常提示主动、推进或外显的力量'
+        : '阴爻通常提示承接、调整或内敛的力量';
+    final change = moving
+        ? '本爻为动爻，阅读时应重点结合爻辞，并与变卦对应位置比较。'
+        : '本爻为静爻，可作为本卦整体结构的背景来理解。';
+    return '$stage；$nature。$change';
   }
 
   static LiuyaoHexagramContent _buildContent(LiuyaoHexagram hexagram) {

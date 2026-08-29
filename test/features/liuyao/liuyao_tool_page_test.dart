@@ -7,6 +7,8 @@ import 'package:pocketools/core/random/random_source.dart';
 import 'package:pocketools/core/session/session.dart';
 import 'package:pocketools/core/tools/tool_module.dart';
 import 'package:pocketools/design_system/app_theme.dart';
+import 'package:pocketools/features/liuyao/content/liuyao_content_catalog.dart';
+import 'package:pocketools/features/liuyao/domain/liuyao_hexagrams.dart';
 import 'package:pocketools/features/liuyao/domain/liuyao_models.dart';
 import 'package:pocketools/features/liuyao/presentation/liuyao_session_id_source.dart';
 import 'package:pocketools/features/liuyao/presentation/liuyao_tool_module.dart';
@@ -262,6 +264,12 @@ void main() {
       for (var index = 0; index < 6; index++) {
         await _tapCurrentLine(tester, manual: true);
       }
+      await tester.runAsync(
+        () => Future.wait(<Future<List<LiuyaoLineContent>>>[
+          LiuyaoContentCatalog.lineContentsFor(LiuyaoHexagrams.all[1]),
+          LiuyaoContentCatalog.lineContentsFor(LiuyaoHexagrams.all.first),
+        ]),
+      );
 
       expect(find.text('卦象释义'), findsNothing);
       expect(find.text('来源与许可'), findsNothing);
@@ -271,10 +279,17 @@ void main() {
       expect(hexagramInfo, findsOneWidget);
       await tester.tap(hexagramInfo);
       await tester.pumpAndSettle();
+      await tester.pump(const Duration(milliseconds: 100));
       expect(find.byKey(const Key('liuyao-meaning-sheet')), findsOneWidget);
       expect(find.text('卦象释义'), findsOneWidget);
       expect(find.text('《周易》卦辞原文'), findsWidgets);
       expect(find.text('常见结构解读'), findsWidgets);
+      expect(find.text('本卦六爻原文与常见解读'), findsOneWidget);
+      expect(find.text('变卦六爻原文与常见解读'), findsOneWidget);
+      expect(find.text('初六 · 动爻'), findsOneWidget);
+      expect(find.text('六二 · 动爻'), findsOneWidget);
+      expect(find.textContaining('履霜,坚冰至'), findsOneWidget);
+      expect(find.textContaining('常见解读：事情刚开始'), findsWidgets);
       expect(find.textContaining('数据按初爻到上爻'), findsNothing);
       expect(find.text('来源与许可'), findsNothing);
       expect(find.text('开源许可'), findsNothing);
