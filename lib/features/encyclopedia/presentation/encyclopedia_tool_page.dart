@@ -90,7 +90,10 @@ final class _EncyclopediaToolPageState extends State<EncyclopediaToolPage> {
       showModalBottomSheet<void>(
         context: context,
         isScrollControlled: true,
-        builder: (_) => _HexagramMeaningSheet(hexagram: hexagram),
+        builder: (_) => _HexagramMeaningSheet(
+          hexagram: hexagram,
+          lineContents: LiuyaoContentCatalog.lineContentsFor(hexagram),
+        ),
       ),
     );
   }
@@ -645,9 +648,13 @@ final class _TarotMeaningSheet extends StatelessWidget {
 }
 
 final class _HexagramMeaningSheet extends StatelessWidget {
-  const _HexagramMeaningSheet({required this.hexagram});
+  const _HexagramMeaningSheet({
+    required this.hexagram,
+    required this.lineContents,
+  });
 
   final LiuyaoHexagram hexagram;
+  final Future<List<LiuyaoLineContent>> lineContents;
 
   @override
   Widget build(BuildContext context) {
@@ -687,6 +694,28 @@ final class _HexagramMeaningSheet extends StatelessWidget {
                 label: '常见结构解读',
                 value: content.structureSummary,
               ),
+              FutureBuilder<List<LiuyaoLineContent>>(
+                future: lineContents,
+                initialData: LiuyaoContentCatalog.cachedLineContentsFor(
+                  hexagram,
+                ),
+                builder: (context, snapshot) {
+                  final lines = snapshot.data;
+                  if (snapshot.hasError) {
+                    return const _EncyclopediaDetailField(
+                      label: '六爻原文与常见解读',
+                      value: '爻辞资源暂时无法读取，请稍后重试。',
+                    );
+                  }
+                  if (lines == null) {
+                    return const _EncyclopediaDetailField(
+                      label: '六爻原文与常见解读',
+                      value: '正在读取六爻原文…',
+                    );
+                  }
+                  return _EncyclopediaLineMeanings(lines: lines);
+                },
+              ),
               _EncyclopediaDetailField(
                 label: '观察提示',
                 value: content.reflectionPrompt,
@@ -697,6 +726,36 @@ final class _HexagramMeaningSheet extends StatelessWidget {
       ),
     );
   }
+}
+
+final class _EncyclopediaLineMeanings extends StatelessWidget {
+  const _EncyclopediaLineMeanings({required this.lines});
+
+  final List<LiuyaoLineContent> lines;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    key: const Key('encyclopedia-liuyao-line-meanings'),
+    padding: const EdgeInsets.only(bottom: AppSpacing.lg),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text('六爻原文与常见解读', style: Theme.of(context).textTheme.titleMedium),
+        const SizedBox(height: AppSpacing.sm),
+        for (final line in lines) ...<Widget>[
+          Text(line.title, style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(height: AppSpacing.xs),
+          Text('《周易》爻辞原文：${line.classicText}'),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            '常见解读：${LiuyaoContentCatalog.commonLineInterpretation(content: line, moving: false)}',
+          ),
+          if (line.position != LiuyaoReading.lineCapacity)
+            const Divider(height: AppSpacing.xl),
+        ],
+      ],
+    ),
+  );
 }
 
 final class _EncyclopediaDetailField extends StatelessWidget {

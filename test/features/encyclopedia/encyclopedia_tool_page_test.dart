@@ -8,6 +8,8 @@ import 'package:pocketools/core/tools/tool_module.dart';
 import 'package:pocketools/design_system/app_theme.dart';
 import 'package:pocketools/design_system/components/app_runtime_asset.dart';
 import 'package:pocketools/features/encyclopedia/presentation/encyclopedia_tool_page.dart';
+import 'package:pocketools/features/liuyao/content/liuyao_content_catalog.dart';
+import 'package:pocketools/features/liuyao/domain/liuyao_hexagrams.dart';
 
 void main() {
   testWidgets('encyclopedia browses Tarot cards and Liuyao hexagrams', (
@@ -64,6 +66,9 @@ void main() {
     expect(table.rows, hasLength(8));
     expect(find.byKey(const Key('encyclopedia-hexagram-01')), findsOneWidget);
 
+    await tester.runAsync(
+      () => LiuyaoContentCatalog.lineContentsFor(LiuyaoHexagrams.all.first),
+    );
     final firstHexagram = find.byKey(const Key('encyclopedia-hexagram-01'));
     await tester.ensureVisible(firstHexagram);
     await tester.tap(firstHexagram);
@@ -80,6 +85,16 @@ void main() {
     expect(find.text('《周易》卦辞原文'), findsOneWidget);
     expect(find.text('乾：元亨。利貞。'), findsOneWidget);
     expect(find.text('常见结构解读'), findsOneWidget);
+    expect(
+      find.byKey(const Key('encyclopedia-liuyao-line-meanings')),
+      findsOneWidget,
+    );
+    expect(find.text('初九'), findsOneWidget);
+    expect(find.text('九二'), findsOneWidget);
+    expect(find.text('上九'), findsOneWidget);
+    expect(find.textContaining('潜龙勿用'), findsOneWidget);
+    expect(find.textContaining('见龙在田'), findsOneWidget);
+    expect(find.textContaining('常见解读：事情刚开始'), findsOneWidget);
     expect(find.text('观察提示'), findsOneWidget);
   });
 
