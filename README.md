@@ -6,7 +6,7 @@ Pocketools 是一个面向 Android 与 Web/PWA 的离线优先随机工具箱，
 
 - **当前版本**：v0.1.3+4。
 - **当前阶段**：首版本地源码基线之上的真实运行时视觉增量已交付；硬币、六爻、D20、扑克和塔罗均接入可识别实体、统一状态舞台和物理感动画，资源候选许可仍待复核。
-- **验证状态**：当前源码已通过 `make check-format`、`make analyze`、全量回归、Web 生产构建和 Android debug／release／split-per-ABI 构建；release APK 当前沿用 Android Debug 证书，尚未完成商店 release 签名，Android 实体设备、真实传感器/振动、完整浏览器矩阵、hosted CI 和公共渠道仍未验证，详见 [多重占卜设计与实现说明](docs/multi-divination-design.md) 与 [平台验收](docs/test-results-platform.md)。
+- **验证状态**：当前源码已通过 `make check-format`、`make analyze`、全量回归、Web 生产构建和 Android debug／release／split-per-ABI 构建；普通本地/CI release APK 是 debug 签名候选，版本标签流水线仅在配置正式签名 Secrets 后发布签名 APK。Android 实体设备、真实传感器/振动、完整浏览器矩阵和公共渠道仍需独立验收，详见 [GitHub Actions 与发布](docs/github-actions.md)、[多重占卜设计与实现说明](docs/multi-divination-design.md) 与 [平台验收](docs/test-results-platform.md)。
 - **许可证**：Apache-2.0 适用于项目代码和原创文档；运行时视觉资源按各自清单状态处理，详见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
 ## v0.1.1 范围
@@ -36,6 +36,7 @@ Pocketools 是一个面向 Android 与 Web/PWA 的离线优先随机工具箱，
 - [运行时视觉资源归属](docs/design/runtime-asset-attributions.md)：硬币、D20、塔罗牌背和 78 张牌面候选的来源、处理和发布边界。
 - [平台与系统工具链验收](docs/test-results-platform.md)：Homebrew Flutter、Makefile、真实浏览器、离线 PWA 和 Android 构建证据。
 - [Android 构建与设备适配](docs/android-builds.md)：Universal、ABI 分包、设备覆盖边界、体积优化和型号适配原则。
+- [GitHub Actions 与发布](docs/github-actions.md)：CI 触发条件、构建产物、Android 签名 Secrets、版本标签和 GitHub Release 流程。
 - [v0.1.1 视觉增量交付报告](docs/release-report-v0.1.1.md)：项目经理、交互、开发和独立 QA 的本轮资源与真实动画收口。
 - [参考图视觉审计](docs/design/reference-effect-audit.md)：用户参考图对应的主题、实体、结果层级、动画和剩余差距。
 
@@ -57,7 +58,7 @@ make build-android-release-split-per-abi
 
 `verify` 执行格式检查、静态分析、全量测试和 Web 构建；`build-android` 构建 debug APK，`build-android-release` 保留 universal release APK，`build-android-release-split-per-abi` 使用 `--split-per-abi` 并校验以下三个 APK：`app-arm64-v8a-release.apk`、`app-armeabi-v7a-release.apk` 和 `app-x86_64-release.apk`。split 目标会先移除这三个已知旧文件，构建成功后再由 `tool/verify_android_apks.dart` 检查产物存在且非空；输出目录固定为 `build/app/outputs/flutter-apk/`，缺失产物时会打印期望目录和文件名。
 
-这里的 split 是 ABI 级适配：它按 Android CPU ABI 生成包，不是 OEM 型号级适配。一个 ABI APK 可以覆盖多个厂商和型号；该命令不会按品牌、机型、SoC 特性或设备销售渠道生成不同包。两个 Android release 目标都需要 JDK 17，以及能提供 compile/target 36、Platform 35、NDK 和 CMake 的 Android SDK；当前 release 构建沿用 debug signing config，不能直接作为商店发布包。`clean` 只调用 Flutter 对当前项目的清理。完整语义见 [需求文档的 Makefile 命令契约](docs/requirements.md#makefile-命令契约)、[平台验收](docs/test-results-platform.md) 和 [项目计划](docs/project-plan.md)。
+这里的 split 是 ABI 级适配：它按 Android CPU ABI 生成包，不是 OEM 型号级适配。一个 ABI APK 可以覆盖多个厂商和型号；该命令不会按品牌、机型、SoC 特性或设备销售渠道生成不同包。两个 Android release 目标都需要 JDK 17，以及能提供 compile/target 36、Platform 35、NDK 和 CMake 的 Android SDK；未配置签名环境变量时构建沿用 debug signing config，只能作为候选包。版本标签流水线要求正式签名 Secrets，细节见 [GitHub Actions 与发布](docs/github-actions.md)。`clean` 只调用 Flutter 对当前项目的清理。完整语义见 [需求文档的 Makefile 命令契约](docs/requirements.md#makefile-命令契约)、[平台验收](docs/test-results-platform.md) 和 [项目计划](docs/project-plan.md)。
 
 ## 本地交付物
 
