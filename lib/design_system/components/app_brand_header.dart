@@ -44,7 +44,7 @@ final class AppBrandHeader extends StatelessWidget {
                 ?.copyWith(fontWeight: FontWeight.w800),
           ),
           Text(
-            'v0.1.2 · 本地随机工具箱',
+            'v0.1.3 · 本地随机工具箱',
             style: Theme.of(context).textTheme.bodySmall
                 ?.copyWith(color: context.appColors.textSecondary),
           ),
