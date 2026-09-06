@@ -615,25 +615,35 @@ final class _TarotMeaningSheet extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: AppSpacing.xl),
-              _EncyclopediaDetailField(
-                label: '正位关键词',
-                value: content.uprightKeywords.join(' · '),
-              ),
-              _EncyclopediaDetailField(
-                label: '逆位关键词',
-                value: content.reversedKeywords.join(' · '),
-              ),
-              _EncyclopediaDetailField(
-                label: '传统牌义（Rider–Waite–Smith 体系）',
-                value: content.traditionalSymbols.join('；'),
-              ),
-              _EncyclopediaDetailField(
-                label: '常见正位解读',
-                value: content.uprightMeaning,
-              ),
-              _EncyclopediaDetailField(
-                label: '常见逆位解读',
-                value: content.reversedMeaning,
+    _EncyclopediaDetailField(
+      label: '项目正位关键词',
+      value: content.uprightKeywords.join(' · '),
+    ),
+    _EncyclopediaDetailField(
+      label: '项目逆位关键词',
+      value: content.reversedKeywords.join(' · '),
+    ),
+    _EncyclopediaDetailField(
+      label: '项目牌面与结构提示',
+      value: content.traditionalSymbols.join('；'),
+    ),
+    _EncyclopediaDetailField(
+      label: '传统参考（RWS/Waite）正位',
+      value: '${content.traditionalReference.uprightKeywords.join(' · ')}\n'
+          '${content.traditionalReference.uprightMeaning}',
+    ),
+    _EncyclopediaDetailField(
+      label: '传统参考（RWS/Waite）逆位',
+      value: '${content.traditionalReference.reversedKeywords.join(' · ')}\n'
+          '${content.traditionalReference.reversedMeaning}',
+    ),
+    _EncyclopediaDetailField(
+      label: '项目正位解读',
+      value: content.uprightMeaning,
+    ),
+    _EncyclopediaDetailField(
+      label: '项目逆位解读',
+      value: content.reversedMeaning,
               ),
               _EncyclopediaBulletField(
                 label: '观察问题',
@@ -687,11 +697,11 @@ final class _HexagramMeaningSheet extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.xl),
               _EncyclopediaDetailField(
-                label: '《周易》卦辞原文',
+                label: LiuyaoContentCatalog.classicGuaTextLabel,
                 value: content.classicText,
               ),
               _EncyclopediaDetailField(
-                label: '常见结构解读',
+                label: LiuyaoContentCatalog.projectStructureLabel,
                 value: content.structureSummary,
               ),
               FutureBuilder<List<LiuyaoLineContent>>(
@@ -703,14 +713,14 @@ final class _HexagramMeaningSheet extends StatelessWidget {
                   final lines = snapshot.data;
                   if (snapshot.hasError) {
                     return const _EncyclopediaDetailField(
-                      label: '六爻原文与常见解读',
+                      label: '六爻经典原文与项目提示',
                       value: '爻辞资源暂时无法读取，请稍后重试。',
                     );
                   }
                   if (lines == null) {
                     return const _EncyclopediaDetailField(
-                      label: '六爻原文与常见解读',
-                      value: '正在读取六爻原文…',
+                      label: '六爻经典原文与项目提示',
+                      value: '正在读取六爻经典原文…',
                     );
                   }
                   return _EncyclopediaLineMeanings(lines: lines);
@@ -740,15 +750,20 @@ final class _EncyclopediaLineMeanings extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('六爻原文与常见解读', style: Theme.of(context).textTheme.titleMedium),
+        Text(
+          '六爻经典原文与项目提示',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         const SizedBox(height: AppSpacing.sm),
         for (final line in lines) ...<Widget>[
           Text(line.title, style: Theme.of(context).textTheme.titleSmall),
           const SizedBox(height: AppSpacing.xs),
-          Text('《周易》爻辞原文：${line.classicText}'),
+          Text(
+            '${LiuyaoContentCatalog.classicLineTextLabel}：${line.classicText}',
+          ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            '常见解读：${LiuyaoContentCatalog.commonLineInterpretation(content: line, moving: false)}',
+            '${LiuyaoContentCatalog.projectLineLabel}：${LiuyaoContentCatalog.commonLineInterpretation(content: line, moving: false)}',
           ),
           if (line.position != LiuyaoReading.lineCapacity)
             const Divider(height: AppSpacing.xl),

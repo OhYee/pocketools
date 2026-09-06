@@ -59,6 +59,10 @@ final class LiuyaoReadingExplanation {
 abstract final class LiuyaoContentCatalog {
   static const contentVersion = '1.2.0';
   static const lineTextAsset = 'assets/runtime/liuyao_lines.json';
+  static const classicGuaTextLabel = '《周易》卦辞原文（经典参考）';
+  static const classicLineTextLabel = '《周易》爻辞原文（经典参考）';
+  static const projectStructureLabel = '项目结构提示（非传统注疏）';
+  static const projectLineLabel = '项目爻位提示（非传统注疏）';
   static final Map<int, Future<List<LiuyaoLineContent>>> _lineContentCache =
       <int, Future<List<LiuyaoLineContent>>>{};
   static final Map<int, List<LiuyaoLineContent>> _loadedLineContents =

@@ -270,17 +270,32 @@ final class TarotInterpretationSheet extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text('关键词：${interpretation.keywords.join('、')}'),
+                  Text('本次项目关键词：${interpretation.keywords.join('、')}'),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    '传统牌义（Rider–Waite–Smith 体系）',
+                    '项目牌面与结构提示',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: AppSpacing.xs),
                   Text(interpretation.traditionalSymbols.join('；')),
                   const SizedBox(height: AppSpacing.lg),
                   Text(
-                    useReversals ? '常见解读（正位／逆位）' : '常见解读',
+                    '传统参考（RWS/Waite）',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    useReversals
+                        ? '正位关键词：${interpretation.traditionalReference.uprightKeywords.join('、')}\n'
+                              '逆位关键词：${interpretation.traditionalReference.reversedKeywords.join('、')}\n'
+                              '正位：${interpretation.traditionalReference.uprightMeaning}\n'
+                              '逆位：${interpretation.traditionalReference.reversedMeaning}'
+                        : '正位关键词：${interpretation.traditionalReference.uprightKeywords.join('、')}\n'
+                              '正位：${interpretation.traditionalReference.uprightMeaning}',
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
+                    useReversals ? '项目解读（正位／逆位）' : '项目解读',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: AppSpacing.xs),

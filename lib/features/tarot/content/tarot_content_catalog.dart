@@ -1,9 +1,10 @@
 import '../domain/tarot_deck.dart';
 import '../domain/tarot_models.dart';
 import 'tarot_content_models.dart';
+import 'tarot_reference_content.dart';
 
 abstract final class TarotContentCatalog {
-  static const contentVersion = '1.0.0';
+  static const contentVersion = '1.1.0';
 
   static final Map<String, TarotCardContent> entries = _buildEntries();
 
@@ -26,6 +27,10 @@ abstract final class TarotContentCatalog {
       }
       if (entry.uprightKeywords.length < 3 ||
           entry.reversedKeywords.length < 3 ||
+          entry.traditionalReference.uprightKeywords.length < 3 ||
+          entry.traditionalReference.reversedKeywords.length < 3 ||
+          entry.traditionalReference.uprightMeaning.trim().isEmpty ||
+          entry.traditionalReference.reversedMeaning.trim().isEmpty ||
           entry.traditionalSymbols.isEmpty ||
           entry.uprightMeaning.trim().isEmpty ||
           entry.reversedMeaning.trim().isEmpty ||
@@ -43,6 +48,7 @@ abstract final class TarotContentCatalog {
       final seed = _majorSeeds[index];
       built[card.id] = TarotCardContent(
         cardId: card.id,
+        traditionalReference: TarotReferenceContentCatalog.forCard(card),
         uprightKeywords: seed.uprightKeywords,
         reversedKeywords: seed.reversedKeywords,
         traditionalSymbols: seed.symbols,
@@ -58,6 +64,7 @@ abstract final class TarotContentCatalog {
       final rank = _rankSeeds[card.rank!]!;
       built[card.id] = TarotCardContent(
         cardId: card.id,
+        traditionalReference: TarotReferenceContentCatalog.forCard(card),
         uprightKeywords: <String>[
           suit.focus,
           rank.uprightFocus,
@@ -330,6 +337,7 @@ final class TarotInterpretationComposer {
     final reversed = drawnCard.orientation == TarotOrientation.reversed;
     return TarotCardInterpretation(
       drawnCard: drawnCard,
+      traditionalReference: content.traditionalReference,
       keywords: reversed ? content.reversedKeywords : content.uprightKeywords,
       traditionalSymbols: content.traditionalSymbols,
       uprightMeaning: content.uprightMeaning,

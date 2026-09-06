@@ -1,10 +1,12 @@
 import 'dart:collection';
 
 import '../domain/tarot_models.dart';
+import 'tarot_reference_content.dart';
 
 final class TarotCardContent {
   TarotCardContent({
     required this.cardId,
+    required this.traditionalReference,
     required List<String> uprightKeywords,
     required List<String> reversedKeywords,
     required List<String> traditionalSymbols,
@@ -25,6 +27,7 @@ final class TarotCardContent {
        );
 
   final String cardId;
+  final TarotReferenceContent traditionalReference;
   final List<String> uprightKeywords;
   final List<String> reversedKeywords;
   final List<String> traditionalSymbols;
@@ -36,6 +39,7 @@ final class TarotCardContent {
 final class TarotCardInterpretation {
   TarotCardInterpretation({
     required this.drawnCard,
+    required this.traditionalReference,
     required List<String> keywords,
     required List<String> traditionalSymbols,
     required this.uprightMeaning,
@@ -52,6 +56,7 @@ final class TarotCardInterpretation {
        );
 
   final TarotDrawnCard drawnCard;
+  final TarotReferenceContent traditionalReference;
   final List<String> keywords;
   final List<String> traditionalSymbols;
   final String uprightMeaning;
