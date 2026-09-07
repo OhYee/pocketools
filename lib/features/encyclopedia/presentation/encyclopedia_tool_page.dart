@@ -615,35 +615,37 @@ final class _TarotMeaningSheet extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: AppSpacing.xl),
-    _EncyclopediaDetailField(
-      label: '项目正位关键词',
-      value: content.uprightKeywords.join(' · '),
-    ),
-    _EncyclopediaDetailField(
-      label: '项目逆位关键词',
-      value: content.reversedKeywords.join(' · '),
-    ),
-    _EncyclopediaDetailField(
-      label: '项目牌面与结构提示',
-      value: content.traditionalSymbols.join('；'),
-    ),
-    _EncyclopediaDetailField(
-      label: '传统参考（RWS/Waite）正位',
-      value: '${content.traditionalReference.uprightKeywords.join(' · ')}\n'
-          '${content.traditionalReference.uprightMeaning}',
-    ),
-    _EncyclopediaDetailField(
-      label: '传统参考（RWS/Waite）逆位',
-      value: '${content.traditionalReference.reversedKeywords.join(' · ')}\n'
-          '${content.traditionalReference.reversedMeaning}',
-    ),
-    _EncyclopediaDetailField(
-      label: '项目正位解读',
-      value: content.uprightMeaning,
-    ),
-    _EncyclopediaDetailField(
-      label: '项目逆位解读',
-      value: content.reversedMeaning,
+              _EncyclopediaDetailField(
+                label: '项目正位关键词',
+                value: content.uprightKeywords.join(' · '),
+              ),
+              _EncyclopediaDetailField(
+                label: '项目逆位关键词',
+                value: content.reversedKeywords.join(' · '),
+              ),
+              _EncyclopediaDetailField(
+                label: '项目牌面与结构提示',
+                value: content.traditionalSymbols.join('；'),
+              ),
+              _EncyclopediaDetailField(
+                label: '传统参考（RWS/Waite）正位',
+                value:
+                    '${content.traditionalReference.uprightKeywords.join(' · ')}\n'
+                    '${content.traditionalReference.uprightMeaning}',
+              ),
+              _EncyclopediaDetailField(
+                label: '传统参考（RWS/Waite）逆位',
+                value:
+                    '${content.traditionalReference.reversedKeywords.join(' · ')}\n'
+                    '${content.traditionalReference.reversedMeaning}',
+              ),
+              _EncyclopediaDetailField(
+                label: '项目正位解读',
+                value: content.uprightMeaning,
+              ),
+              _EncyclopediaDetailField(
+                label: '项目逆位解读',
+                value: content.reversedMeaning,
               ),
               _EncyclopediaBulletField(
                 label: '观察问题',
@@ -750,10 +752,7 @@ final class _EncyclopediaLineMeanings extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          '六爻经典原文与项目提示',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
+        Text('六爻经典原文与项目提示', style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: AppSpacing.sm),
         for (final line in lines) ...<Widget>[
           Text(line.title, style: Theme.of(context).textTheme.titleSmall),
