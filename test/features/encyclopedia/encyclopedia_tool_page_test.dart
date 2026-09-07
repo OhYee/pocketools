@@ -46,9 +46,10 @@ void main() {
     expect(find.byKey(const Key('encyclopedia-tarot-detail')), findsOneWidget);
     expect(find.text('愚者'), findsWidgets);
     expect(find.textContaining('开放'), findsWidgets);
-    expect(find.text('传统牌义（Rider–Waite–Smith 体系）'), findsOneWidget);
-    expect(find.text('常见正位解读'), findsOneWidget);
-    expect(find.text('常见逆位解读'), findsOneWidget);
+    expect(find.text('传统参考（RWS/Waite）正位'), findsOneWidget);
+    expect(find.text('传统参考（RWS/Waite）逆位'), findsOneWidget);
+    expect(find.text('项目正位解读'), findsOneWidget);
+    expect(find.text('项目逆位解读'), findsOneWidget);
 
     Navigator.of(
       tester.element(find.byKey(const Key('encyclopedia-tarot-detail'))),
@@ -82,9 +83,9 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text('《周易》卦辞原文'), findsOneWidget);
+    expect(find.text('《周易》卦辞原文（经典参考）'), findsOneWidget);
     expect(find.text('乾：元亨。利貞。'), findsOneWidget);
-    expect(find.text('常见结构解读'), findsOneWidget);
+    expect(find.text('项目结构提示（非传统注疏）'), findsOneWidget);
     expect(
       find.byKey(const Key('encyclopedia-liuyao-line-meanings')),
       findsOneWidget,
@@ -94,7 +95,7 @@ void main() {
     expect(find.text('上九'), findsOneWidget);
     expect(find.textContaining('潜龙勿用'), findsOneWidget);
     expect(find.textContaining('见龙在田'), findsOneWidget);
-    expect(find.textContaining('常见解读：事情刚开始'), findsOneWidget);
+    expect(find.textContaining('项目爻位提示（非传统注疏）：事情刚开始'), findsOneWidget);
     expect(find.text('观察提示'), findsOneWidget);
   });
 

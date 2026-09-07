@@ -123,7 +123,7 @@ void main() {
       find.byKey(const Key('tarot-interpretation-sheet-0')),
       findsOneWidget,
     );
-    expect(find.textContaining('关键词：'), findsOneWidget);
+    expect(find.textContaining('本次项目关键词：'), findsOneWidget);
   });
 
   testWidgets('B and C cards also open their Tarot interpretation sheets', (
@@ -148,7 +148,7 @@ void main() {
         find.byKey(Key('tarot-interpretation-sheet-${entry.value}')),
         findsOneWidget,
       );
-      expect(find.textContaining('关键词：'), findsOneWidget);
+      expect(find.textContaining('本次项目关键词：'), findsOneWidget);
 
       Navigator.of(
         tester.element(

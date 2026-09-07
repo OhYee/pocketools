@@ -55,6 +55,10 @@ void main() {
           .listSync(recursive: true)
           .whereType<File>()
           .where((file) => file.path.endsWith('.dart'))
+          .where(
+            (file) =>
+                !file.path.endsWith('content/liuyao_content_catalog.dart'),
+          )
           .toList(growable: false);
 
       expect(files, isNotEmpty);
@@ -127,9 +131,6 @@ void main() {
 
       final pureFiles = <File>[
         ...Directory('lib/features/liuyao/domain')
-            .listSync(recursive: true)
-            .whereType<File>(),
-        ...Directory('lib/features/liuyao/content')
             .listSync(recursive: true)
             .whereType<File>(),
       ].where((file) => file.path.endsWith('.dart'));

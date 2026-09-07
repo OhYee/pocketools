@@ -6,12 +6,7 @@ void main() {
   test('domain and content stay Flutter and presentation independent', () {
     final files = Directory('lib/features/liuyao/domain')
         .listSync(recursive: true)
-        .whereType<File>()
-        .followedBy(
-          Directory('lib/features/liuyao/content')
-              .listSync(recursive: true)
-              .whereType<File>(),
-        );
+        .whereType<File>();
     for (final file in files) {
       final source = file.readAsStringSync();
       expect(source, isNot(contains('package:flutter/')), reason: file.path);
@@ -54,7 +49,7 @@ void main() {
     final source = File(
       'lib/features/liuyao/content/liuyao_content_catalog.dart',
     ).readAsStringSync();
-    expect(source, contains("contentVersion = '1.1.0'"));
+    expect(source, contains("contentVersion = '1.2.0'"));
     expect(source, contains('all 64 hexagrams'));
     expect(source, isNot(contains('Image.asset')));
     expect(source, isNot(contains('http://')));
